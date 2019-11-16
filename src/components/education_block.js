@@ -5,28 +5,37 @@ import {
   Button 
 } from 'semantic-ui-react';
 import {
-  getTenureString,
-  getImgData
+  getImgData,
 } from '../components/resume_utils'
+import { useStaticQuery, graphql } from "gatsby"
 
-const WorkBlock = ({
+const EducationBlock = ({
   name,
   position,
   startdate,
   enddate,
   city,
   state,
-  details,
   tags,
 }) => {
+  const photoData = useStaticQuery(graphql`
+    query {
+      allImageSharp {
+        nodes {
+          fixed {
+            src
+          }
+        }
+      }
+    }
+  `);
 
   const {
     logo,
     alt
-  } = getImgData(name, {})
+  } = getImgData(name, photoData)
 
-  const detailsArray = details.split(/\n/g)
-  const tagsArray = tags.split(', ')
+  const tagsArray = tags ? tags.split(', ') : [];
   return (
     <div>
       <Item.Group divided>
@@ -35,11 +44,8 @@ const WorkBlock = ({
           <Item.Content>
             <Item.Header as='a'>{position}</Item.Header>
             <Item.Meta><Header size='small'>{name}</Header></Item.Meta>
-            <Item.Meta>{startdate} - {enddate ? enddate : 'Present'} &#183; {getTenureString(startdate, enddate)} </Item.Meta>
+            <Item.Meta>{startdate} - {enddate ? enddate : 'Present'}</Item.Meta>
             <Item.Meta>{city}, {state}</Item.Meta>
-            {detailsArray.map(detail => {
-              return <Item.Description>{detail}</Item.Description>
-            })}
             <Item.Extra>
               {tagsArray.map(tag => {
                 return <Button basic>{tag}</Button>
@@ -53,4 +59,4 @@ const WorkBlock = ({
   )
 }
 
-export default WorkBlock
+export default EducationBlock
