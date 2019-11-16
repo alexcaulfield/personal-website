@@ -1,11 +1,12 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Alex Caulfield`,
+    description: `Alex Caulfield's Gatsby Portfolio`,
+    author: `Alex Caulfield <alex@alexcaulfield.com>`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-less`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -27,8 +28,13 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    {
+      resolve: 'gatsby-source-google-sheets',
+      options: {
+          spreadsheetId: '19DioFyzhNk41wCiZe6R6pYRyBU2W9wzx9as9CFwtSsE',
+          worksheetTitle: 'work',
+          credentials: require('./ac-gatsby-portfolio-69581e37f021.json')
+      }
+    },
   ],
 }

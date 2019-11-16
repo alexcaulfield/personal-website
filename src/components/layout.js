@@ -11,6 +11,7 @@ import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
 import "./layout.css"
+import "semantic-ui-less/semantic.less"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -36,7 +37,9 @@ const Layout = ({ children }) => {
       >
         <main>{children}</main>
         <footer>
-          © {new Date().getFullYear()}, Built with
+          <p>© {new Date().getFullYear()} Alex Caulfield</p>
+          <p><a href="mailto:alex@alexcaulfield.com">alex@alexcaulfield.com</a> </p>
+          Built with
           {` `}
           <a href="https://www.gatsbyjs.org">Gatsby</a>
         </footer>
