@@ -15,11 +15,11 @@ export const getTenureString = (start, end) => {
 }
 
 export const getImgData = (name, photoData) => {
-  console.log(photoData);
   const splitNameString = name.split(' ')
   const logo = splitNameString.length > 1 ?
-    (splitNameString[0] == 'Needham' ? photoData.allImageSharp.nodes[0].fixed.src :`//logo.clearbit.com/${splitNameString[0]}.edu`) : `//logo.clearbit.com/${name}.com`;
-  console.log(logo)
+    (splitNameString[0] == 'Needham' ? 
+      photoData.allImageSharp.nodes[0].fixed.src :`//logo.clearbit.com/${splitNameString[0]}.edu`) 
+    : `//logo.clearbit.com/${name}.com`;
   return {
     logo: logo,
     alt: `${name} Logo`
