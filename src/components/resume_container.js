@@ -1,6 +1,7 @@
 import React from 'react'
 import WorkBlock from './work_block'
 import EducationBlock from './education_block'
+import ProjectBlock from './project_block'
 import { useStaticQuery, graphql } from "gatsby"
 import { Header } from 'semantic-ui-react'
 import { PDFDownloadLink } from '@react-pdf/renderer'
@@ -21,6 +22,7 @@ const ResumeContainer = () => {
             state
             details
             tags
+            link
           }
         }
       }
@@ -29,6 +31,7 @@ const ResumeContainer = () => {
 
   const workBlocks = data.allGoogleSheetWorkRow.edges.filter(({node}) => node.type === 'work')
   const eduBlocks = data.allGoogleSheetWorkRow.edges.filter(({node}) => node.type === 'education')
+  const projectBlocks = data.allGoogleSheetWorkRow.edges.filter(({node}) => node.type === 'project')
 
   return (
     <>
@@ -88,6 +91,23 @@ const ResumeContainer = () => {
                 city={city}
                 state={state}
                 tags={tags}
+              />
+            )
+        })}
+        <Header size='medium'>Projects</Header>
+        {projectBlocks.map(({node}) => {
+          const {
+            name,
+            details,
+            tags,
+            link,
+          } = node
+            return (
+              <ProjectBlock
+                name={name}
+                details={details}
+                tags={tags}
+                link={link}
               />
             )
         })}
