@@ -25,6 +25,7 @@
     "semantic-ui-react": "^0.82.1"
   },
   "devDependencies": {
+    "@babel/plugin-proposal-optional-chaining": "^7.6.0",
     "prettier": "^1.19.1"
   },
   "keywords": [

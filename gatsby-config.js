@@ -31,7 +31,15 @@ module.exports = {
       resolve: 'gatsby-source-google-sheets',
       options: {
           spreadsheetId: '19DioFyzhNk41wCiZe6R6pYRyBU2W9wzx9as9CFwtSsE',
-          worksheetTitle: 'work',
+          worksheetTitle: 'blocks',
+          credentials: require('./ac-gatsby-portfolio-69581e37f021.json')
+      }
+    },
+    {
+      resolve: 'gatsby-source-google-sheets',
+      options: {
+          spreadsheetId: '19DioFyzhNk41wCiZe6R6pYRyBU2W9wzx9as9CFwtSsE',
+          worksheetTitle: 'header',
           credentials: require('./ac-gatsby-portfolio-69581e37f021.json')
       }
     },

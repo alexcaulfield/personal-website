@@ -1,13 +1,8 @@
 import React from 'react'
 import { 
   Item, 
-  Header, 
   Button 
 } from 'semantic-ui-react';
-import {
-  getTenureString,
-  getImgData
-} from '../components/resume_utils'
 
 const ProjectBlock = ({
   name,
@@ -15,7 +10,6 @@ const ProjectBlock = ({
   tags,
   link,
 }) => {
-
 
   const detailsArray = details.split(/\n/g)
   const tagsArray = tags.split(', ')

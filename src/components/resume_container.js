@@ -9,8 +9,8 @@ import PdfDocument from '../components/resume_pdf'
 
 const ResumeContainer = () => {
   const data = useStaticQuery(graphql`
-    query workQuery {
-      allGoogleSheetWorkRow(filter: {}) {
+    query blocksQuery {
+      allGoogleSheetBlocksRow(filter: {}) {
         edges {
           node {
             name
@@ -26,19 +26,32 @@ const ResumeContainer = () => {
           }
         }
       }
+      allGoogleSheetHeaderRow(filter: {}) {
+        edges {
+          node {
+            name
+            address
+            email
+            phone
+            website
+          }
+        }
+      }
     }
   `)
 
-  const workBlocks = data.allGoogleSheetWorkRow.edges.filter(({node}) => node.type === 'work')
-  const eduBlocks = data.allGoogleSheetWorkRow.edges.filter(({node}) => node.type === 'education')
-  const projectBlocks = data.allGoogleSheetWorkRow.edges.filter(({node}) => node.type === 'project')
+  const workBlocks = data.allGoogleSheetBlocksRow.edges.filter(({node}) => node.type === 'work')
+  const eduBlocks = data.allGoogleSheetBlocksRow.edges.filter(({node}) => node.type === 'education')
+  const projectBlocks = data.allGoogleSheetBlocksRow.edges.filter(({node}) => node.type === 'project')
 
   return (
     <>
       <PDFDownloadLink document={
         <PdfDocument 
-          work={workBlocks} 
-          edu={eduBlocks}
+          headerNodes={data.allGoogleSheetHeaderRow.edges}
+          workNodes={workBlocks} 
+          eduNodes={eduBlocks}
+          projNodes={projectBlocks}
         />
       } fileName="alexcaulfield-resume.pdf">
         {({ blob, url, loading, error }) => (loading ? 'Loading document...' : 'Download my resume')}
@@ -56,6 +69,7 @@ const ResumeContainer = () => {
             state,
             details,
             tags,
+            link,
           } = node
             return (
               <WorkBlock
@@ -67,6 +81,7 @@ const ResumeContainer = () => {
                 state={state}
                 details={details}
                 tags={tags}
+                link={link}
               />
             )
           }

@@ -1,26 +1,40 @@
 import React from 'react'
-import { Page, Text, View, Document, StyleSheet } from '@react-pdf/renderer'
+import path from 'path'
+import { Font, Page, Text, View, Document, StyleSheet } from '@react-pdf/renderer'
+import HeaderPdf from '../components/pdf_components/header'
 
-// Create styles
+Font.register({src: 'http://fonts.gstatic.com/s/lato/v16/S6uyw4BMUTPHjx4wWyWtFCc.ttf', family: 'LatoRegular', fontStyle: 'normal', fontWeight:'normal'})
+
 const styles = StyleSheet.create({
   page: {
-    flexDirection: 'row',
-    backgroundColor: '#E4E4E4'
+    padding: 14,
+    fontSize: 12,
+    fontFamily: 'LatoRegular'
   },
   section: {
-    margin: 10,
-    padding: 10,
-    flexGrow: 1
+    margin: 10
   }
 })
 
 // Create Document Component
-const PdfDocument = ({work, edu}) => {
+const PdfDocument = ({    
+  headerNodes,
+  workNodes,
+  eduNodes,
+  projNodes,
+}) => {
+  console.log(path.resolve(__dirname, '../components/pdf_components/fonts/Lato/Lato-Regular.ttf'))
+  console.log(__dirname)
+  console.log(Font.getRegisteredFontFamilies())
+  console.log(Font.getRegisteredFonts())
   return (
     <Document>
       <Page size="A4" style={styles.page}>
         <View style={styles.section}>
-          {work.map(({node}) => {
+          {headerNodes[0] &&
+            <HeaderPdf {...headerNodes[0].node} />
+          }
+          {workNodes.map(({node}) => {
             const {
               name,
               position,

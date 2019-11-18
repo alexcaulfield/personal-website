@@ -18,6 +18,7 @@ const WorkBlock = ({
   state,
   details,
   tags,
+  link,
 }) => {
 
   const {
@@ -45,6 +46,11 @@ const WorkBlock = ({
                 return <Button basic>{tag}</Button>
               })}
             </Item.Extra>
+            {link &&
+              <Item.Meta>
+                <a href={link}>{link}</a>
+              </Item.Meta>
+            }
           </Item.Content>
         </Item>
       </Item.Group>
