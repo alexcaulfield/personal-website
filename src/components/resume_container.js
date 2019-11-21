@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import WorkBlock from './work_block'
 import EducationBlock from './education_block'
 import ProjectBlock from './project_block'
@@ -8,6 +8,12 @@ import { PDFDownloadLink } from '@react-pdf/renderer'
 import PdfDocument from '../components/resume_pdf'
 
 const ResumeContainer = () => {
+  const [isClient, setIsClient] = useState(false)
+
+  useEffect(() => {
+    setIsClient(true)
+  }, [])
+
   const data = useStaticQuery(graphql`
     query blocksQuery {
       allGoogleSheetBlocksRow(filter: {}) {
@@ -46,16 +52,19 @@ const ResumeContainer = () => {
 
   return (
     <>
-      <PDFDownloadLink document={
-        <PdfDocument 
-          headerNodes={data.allGoogleSheetHeaderRow.edges}
-          workNodes={workBlocks} 
-          eduNodes={eduBlocks}
-          projNodes={projectBlocks}
-        />
-      } fileName="alexcaulfield-resume.pdf">
-        {({ blob, url, loading, error }) => (loading ? 'Loading document...' : 'Download my resume')}
-      </PDFDownloadLink>    
+      {isClient && (
+        <PDFDownloadLink document={
+          <PdfDocument 
+            headerNodes={data.allGoogleSheetHeaderRow.edges}
+            workNodes={workBlocks} 
+            eduNodes={eduBlocks}
+            projNodes={projectBlocks}
+          />
+        } fileName="alexcaulfield-resume.pdf">
+          {({ blob, url, loading, error }) => (loading ? 'Loading document...' : 'Download my resume')}
+        </PDFDownloadLink> 
+      )}
+         
       <div>
         <Header size='large'>Alex Caulfield</Header>
         <Header size='medium'>Experience</Header>
