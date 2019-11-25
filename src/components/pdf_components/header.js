@@ -3,7 +3,7 @@ import { Text, Image, View, StyleSheet } from '@react-pdf/renderer'
 
 const styles = StyleSheet.create({
   header: {
-    paddingBottom: 12,
+    paddingBottom: 8,
   },
   name: {
     textAlign: 'center',
@@ -30,8 +30,8 @@ const HeaderPdf = ({
     <View styles={styles.header} fixed>
       <Text style={styles.name}>{name}</Text>
       <View style={styles.detailsBlock}>
-        <Text>{address}</Text>
-        <Text>{email} | {website} | {phone}</Text>
+        <Text>Software Engineer based in {address}</Text>
+        <Text>{email} &#183; {website} &#183; {phone}</Text>
       </View>
     </View>
   )

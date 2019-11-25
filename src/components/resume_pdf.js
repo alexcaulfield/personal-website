@@ -1,7 +1,7 @@
 import React from 'react'
-import path from 'path'
 import { Font, Page, Text, View, Document, StyleSheet } from '@react-pdf/renderer'
 import HeaderPdf from '../components/pdf_components/header'
+import WorkPdfBlock from '../components/pdf_components/work_pdf_block'
 
 // https://fonts.googleapis.com/css?family=Lato
 Font.register({src: 'https://fonts.gstatic.com/s/lato/v16/S6uyw4BMUTPHjx4wWyWtFCc.ttf', family: 'LatoRegular', fontStyle: 'normal', fontWeight:'normal'})
@@ -20,6 +20,8 @@ const styles = StyleSheet.create({
   header: {
     fontSize: 14,
     fontFamily: 'LatoBold',
+    paddingTop: 8,
+    paddingBottom: 8,
   }
 })
 
@@ -31,7 +33,12 @@ const PdfDocument = ({
   projNodes,
 }) => {
   return (
-    <Document>
+    <Document
+      title="Alex Caulfield's Resume"
+      author="Alex Caulfield"
+      subject="Resume"
+      creator="Alex Caulfield"
+    >
       <Page size="A4" style={styles.page}>
         <View style={styles.section}>
           {headerNodes[0] &&
@@ -50,7 +57,16 @@ const PdfDocument = ({
               tags,
             } = node
             return (
-              <Text>{name}</Text>
+              <WorkPdfBlock
+                name={name}
+                position={position}
+                startdate={startdate}
+                enddate={enddate}
+                city={city}
+                state={state}
+                details={details}
+                tags={tags}
+              />
             )
           })}
         </View>
