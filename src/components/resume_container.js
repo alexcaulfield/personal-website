@@ -3,9 +3,13 @@ import WorkBlock from './work_block'
 import EducationBlock from './education_block'
 import ProjectBlock from './project_block'
 import { useStaticQuery, graphql } from "gatsby"
-import { Header } from 'semantic-ui-react'
 import { PDFDownloadLink } from '@react-pdf/renderer'
 import PdfDocument from '../components/resume_pdf'
+import {  
+  Header, 
+  Button, 
+  Icon, 
+} from 'semantic-ui-react';
 
 const ResumeContainer = () => {
   const [isClient, setIsClient] = useState(false)
@@ -52,21 +56,31 @@ const ResumeContainer = () => {
 
   return (
     <>
-      {isClient && (
-        <PDFDownloadLink document={
-          <PdfDocument 
-            headerNodes={data.allGoogleSheetHeaderRow.edges}
-            workNodes={workBlocks} 
-            eduNodes={eduBlocks}
-            projNodes={projectBlocks}
-          />
-        } fileName="alexcaulfield-resume.pdf">
-          {({ blob, url, loading, error }) => (loading ? 'Loading document...' : 'Download my resume')}
-        </PDFDownloadLink> 
-      )}
+      <div style={{padding: 25, textAlign: "center"}}>
+        {isClient && (
+          <PDFDownloadLink document={
+            <PdfDocument 
+              headerNodes={data.allGoogleSheetHeaderRow.edges}
+              workNodes={workBlocks} 
+              eduNodes={eduBlocks}
+              projNodes={projectBlocks}
+            />
+          } fileName="alexcaulfield-resume.pdf">
+            {({ blob, url, loading, error }) => 
+              (loading ? 
+                <Button secondary><Icon loading name='spinner' /></Button> : 
+                <Button primary>Download my resume <Icon name='download' /></Button>
+            )}
+          </PDFDownloadLink> 
+        )}
+        <div style={{padding: 10}}>
+          <a href="https://www.linkedin.com/in/alexandercaulfield/" target="_blank"><Icon name='linkedin' size='huge'></Icon></a>
+          <a href="https://github.com/alexcaulfield" target="_blank"><Icon name='github' size='huge'></Icon></a>
+          <a href="mailto:alex@alexcaulfield.com"><Icon name='mail' size='huge'></Icon></a>
+        </div>
+      </div>
          
       <div>
-        <Header size='large'>Alex Caulfield</Header>
         <Header size='medium'>Experience</Header>
         {workBlocks.map(({node}) => {
           const {

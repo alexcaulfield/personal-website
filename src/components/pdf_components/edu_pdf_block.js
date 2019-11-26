@@ -24,7 +24,6 @@ const styles = StyleSheet.create({
     marginLeft: 'auto',
     marginRight: 4,
     fontFamily: 'LatoRegular',
-    marginLeft: 4,
   },
   date: {
     justifyContent: "flex-end"
@@ -49,36 +48,33 @@ const styles = StyleSheet.create({
   },
 })
 
-const WorkPdfBlock = ({
+const EduPdfBlock = ({
     name,
     position,
     startdate,
     enddate,
     city,
     state,
-    details,
     tags,
 }) => {
-
-  const detailsArray = details.split(/\n/g)
+  const shouldShowLocation = (((position && name)) ? (position.length + name.length) < 40 : false) || !position
+  const shouldShowPosition = !!position
+  const shouldShowSkills = !!tags
   return (
     <View style={styles.workBlock} fixed>
       <View style={styles.headline}>
-        <Text style={styles.name}>{position}</Text>
-        <Text style={styles.company}>{name} <Text style={styles.location}>&#183; {city}, {state}</Text></Text>
+        {shouldShowPosition && <Text style={styles.name}>{position}</Text>}
+        <Text style={styles.company}>{name} {shouldShowLocation && <Text style={styles.location}>&#183; {city}, {state}</Text>}</Text>
         <Text style={styles.date}>{startdate} - {enddate ? enddate : 'Present'}</Text>
       </View>
-      <View style={styles.detailsBlock}>
-        {detailsArray.map(detail => {
-          return <Text style={styles.detail}>{detail}</Text>
-        })}
-      </View>
+      {shouldShowSkills && 
       <View style={styles.skills}>
         <Text style={styles.skillsLabel}>Relevant Skills:</Text>
         <Text style={styles.skillsList}>{tags}</Text>
       </View>
+      }
     </View>
   )
 }
 
-export default WorkPdfBlock
+export default EduPdfBlock

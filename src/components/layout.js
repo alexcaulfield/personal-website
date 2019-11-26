@@ -38,7 +38,6 @@ const Layout = ({ children }) => {
         <main>{children}</main>
         <footer>
           <p>© {new Date().getFullYear()} Alex Caulfield</p>
-          <p><a href="mailto:alex@alexcaulfield.com">alex@alexcaulfield.com</a> </p>
           Built with
           {` `}
           <a href="https://www.gatsbyjs.org">Gatsby</a>

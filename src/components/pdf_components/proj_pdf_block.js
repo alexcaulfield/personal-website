@@ -24,7 +24,6 @@ const styles = StyleSheet.create({
     marginLeft: 'auto',
     marginRight: 4,
     fontFamily: 'LatoRegular',
-    marginLeft: 4,
   },
   date: {
     justifyContent: "flex-end"
@@ -49,24 +48,16 @@ const styles = StyleSheet.create({
   },
 })
 
-const WorkPdfBlock = ({
-    name,
-    position,
-    startdate,
-    enddate,
-    city,
-    state,
-    details,
-    tags,
+const ProjPdfBlock = ({
+  name,
+  details,
+  tags,
 }) => {
-
   const detailsArray = details.split(/\n/g)
   return (
     <View style={styles.workBlock} fixed>
       <View style={styles.headline}>
-        <Text style={styles.name}>{position}</Text>
-        <Text style={styles.company}>{name} <Text style={styles.location}>&#183; {city}, {state}</Text></Text>
-        <Text style={styles.date}>{startdate} - {enddate ? enddate : 'Present'}</Text>
+        <Text style={styles.name}>{name}</Text>
       </View>
       <View style={styles.detailsBlock}>
         {detailsArray.map(detail => {
@@ -81,4 +72,4 @@ const WorkPdfBlock = ({
   )
 }
 
-export default WorkPdfBlock
+export default ProjPdfBlock
