@@ -1,9 +1,17 @@
 const dotenv = require('dotenv')
 const result = dotenv.config()
 
-const env_creds = {
-  client_email: result.parsed.CLIENT_EMAIL || process.env.CLIENT_EMAIL,
-  private_key: result.parsed.PRIVATE_KEY || process.env.PRIVATE_KEY,
+var env_creds = {}
+if (result) {
+  env_creds = {
+    client_email: result.parsed.CLIENT_EMAIL,
+    private_key: result.parsed.PRIVATE_KEY,
+  }
+} else {
+  env_creds = {
+    client_email: process.env.CLIENT_EMAIL,
+    private_key: process.env.PRIVATE_KEY,
+  }
 }
 
 module.exports = {
