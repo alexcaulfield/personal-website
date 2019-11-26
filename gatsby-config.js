@@ -33,7 +33,7 @@ module.exports = {
       options: {
           spreadsheetId: '19DioFyzhNk41wCiZe6R6pYRyBU2W9wzx9as9CFwtSsE',
           worksheetTitle: 'blocks',
-          credentials: require('./ac-gatsby-portfolio-69581e37f021.json')
+          credentials: require('./creds.json')
       }
     },
     {
@@ -41,7 +41,7 @@ module.exports = {
       options: {
           spreadsheetId: '19DioFyzhNk41wCiZe6R6pYRyBU2W9wzx9as9CFwtSsE',
           worksheetTitle: 'header',
-          credentials: require('./ac-gatsby-portfolio-69581e37f021.json')
+          credentials: require('./creds.json')
       }
     },
   ],
