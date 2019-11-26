@@ -20,7 +20,7 @@ const EducationBlock = ({
 }) => {
   const photoData = useStaticQuery(graphql`
     query {
-      allImageSharp {
+      allImageSharp(filter: {fixed: {originalName: {eq:"nhs_logo.png"}}}) {
         nodes {
           fixed {
             src
@@ -29,7 +29,7 @@ const EducationBlock = ({
       }
     }
   `);
-
+  
   const {
     logo,
     alt

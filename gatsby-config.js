@@ -1,3 +1,9 @@
+require('dotenv').config();
+const env_creds = {
+  client_email: process.env.CLIENT_EMAIL,
+  private_key: process.env.PRIVATE_KEY,
+}
+
 module.exports = {
   siteMetadata: {
     title: `Alex Caulfield`,
@@ -33,7 +39,7 @@ module.exports = {
       options: {
           spreadsheetId: '19DioFyzhNk41wCiZe6R6pYRyBU2W9wzx9as9CFwtSsE',
           worksheetTitle: 'blocks',
-          credentials: require('./creds.json')
+          credentials: env_creds
       }
     },
     {
@@ -41,7 +47,7 @@ module.exports = {
       options: {
           spreadsheetId: '19DioFyzhNk41wCiZe6R6pYRyBU2W9wzx9as9CFwtSsE',
           worksheetTitle: 'header',
-          credentials: require('./creds.json')
+          credentials: env_creds
       }
     },
   ],
