@@ -2,7 +2,7 @@ const dotenv = require('dotenv')
 const result = dotenv.config()
 
 var env_creds = {}
-if (result) {
+if (result.parsed) {
   env_creds = {
     client_email: result.parsed.CLIENT_EMAIL,
     private_key: result.parsed.PRIVATE_KEY,
