@@ -2,10 +2,11 @@ const dotenv = require('dotenv')
 const result = dotenv.config({
   path: `${__dirname}/.env`
 })
+const googleApiKey = process.env.PRIVATE_KEY.replace(new RegExp("\\\\n", "\g"), "\n")
 
 const env_creds = {
   client_email: process.env.CLIENT_EMAIL,
-  private_key: process.env.PRIVATE_KEY,
+  private_key: googleApiKey,
 }
 
 module.exports = {
