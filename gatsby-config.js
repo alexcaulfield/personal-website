@@ -12,7 +12,7 @@ const env_creds = {
 module.exports = {
   siteMetadata: {
     title: `Alex Caulfield`,
-    description: `Alex Caulfield's Gatsby Portfolio`,
+    description: `Alex Caulfield's Portfolio`,
     author: `Alex Caulfield <alex@alexcaulfield.com>`,
   },
   plugins: [
