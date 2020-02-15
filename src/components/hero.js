@@ -44,8 +44,14 @@ const Hero = () => {
         opacity={0}
         parallaxOffset={70}
       >
-        <Image src={headshotSrc} size='small' circular centered bordered />
-        <Segment>{bio}</Segment>
+        <div
+          style={{
+            maxWidth:'960px'
+          }}
+        >
+          <Image src={headshotSrc} size='small' circular centered bordered />
+          <Segment>{bio}</Segment>
+        </div>
       </LazyHero>
     </div>
   )

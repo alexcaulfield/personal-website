@@ -12,6 +12,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import Header from "./header"
 import "./layout.css"
 import "semantic-ui-less/semantic.less"
+import Hero from './hero'
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -27,6 +28,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <Header siteTitle={data.site.siteMetadata.title} />
+      <Hero />
       <div
         style={{
           margin: `0 auto`,
