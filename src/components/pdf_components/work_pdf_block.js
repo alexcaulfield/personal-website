@@ -24,7 +24,6 @@ const styles = StyleSheet.create({
     marginLeft: 'auto',
     marginRight: 4,
     fontFamily: 'LatoRegular',
-    marginLeft: 4,
   },
   date: {
     justifyContent: "flex-end"
@@ -73,10 +72,12 @@ const WorkPdfBlock = ({
           return <Text style={styles.detail}>{detail}</Text>
         })}
       </View>
-      <View style={styles.skills}>
-        <Text style={styles.skillsLabel}>Relevant Skills:</Text>
-        <Text style={styles.skillsList}>{tags}</Text>
-      </View>
+      {tags &&
+        <View style={styles.skills}>
+          <Text style={styles.skillsLabel}>Relevant Skills:</Text>
+          <Text style={styles.skillsList}>{tags}</Text>
+        </View>
+      }
     </View>
   )
 }

@@ -64,10 +64,12 @@ const ProjPdfBlock = ({
           return <Text style={styles.detail}>{detail}</Text>
         })}
       </View>
-      <View style={styles.skills}>
-        <Text style={styles.skillsLabel}>Relevant Skills:</Text>
-        <Text style={styles.skillsList}>{tags}</Text>
-      </View>
+      {tags &&
+        <View style={styles.skills}>
+          <Text style={styles.skillsLabel}>Relevant Skills:</Text>
+          <Text style={styles.skillsList}>{tags}</Text>
+        </View>
+      }
     </View>
   )
 }

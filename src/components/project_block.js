@@ -12,7 +12,7 @@ const ProjectBlock = ({
 }) => {
 
   const detailsArray = details.split(/\n/g)
-  const tagsArray = tags.split(', ')
+  const tagsArray = tags ? tags.split(', ') : []
   return (
     <div>
       <Item.Group divided>
