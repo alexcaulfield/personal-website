@@ -1,7 +1,8 @@
 import React from 'react'
-import { 
-  Item, 
-  Button 
+import {
+  Button,
+  Card,
+  Icon,
 } from 'semantic-ui-react';
 
 const ProjectBlock = ({
@@ -9,30 +10,29 @@ const ProjectBlock = ({
   details,
   tags,
   link,
+  githublink
 }) => {
-
-  const detailsArray = details.split(/\n/g)
-  const tagsArray = tags ? tags.split(', ') : []
+  const detailsArray = details.split(/\n/g);
+  const tagsArray = tags ? tags.split(', ') : [];
   return (
-    <div>
-      <Item.Group divided>
-        <Item>
-          <Item.Content>
-            <Item.Header as='a'><a href={link}>{name}</a></Item.Header>
-            {detailsArray.map(detail => {
-              return <Item.Description>{detail}</Item.Description>
-            })}
-            <Item.Extra>
-              {tagsArray.map(tag => {
-                return <Button basic>{tag}</Button>
-              })}
-            </Item.Extra>
-          </Item.Content>
-        </Item>
-      </Item.Group>
-      <br />
-    </div>
+    <Card>
+      <Card.Content>
+        <Card.Header>{name}</Card.Header>
+        <Card.Meta>
+          {link && <a href={link} target="_blank"><Icon name='linkify'/></a>}
+          {githublink && <a href={''} target="_blank"><Icon name='github'/></a>}
+        </Card.Meta>
+        {detailsArray.map(detail => {
+          return <Card.Description>{detail}</Card.Description>
+        })}
+      </Card.Content>
+      <Card.Content extra>
+        {tagsArray.map(tag => {
+          return <Button basic>{tag}</Button>
+        })}
+      </Card.Content>
+    </Card>
   )
-}
+};
 
 export default ProjectBlock

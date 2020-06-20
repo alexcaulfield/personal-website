@@ -1,16 +1,13 @@
 import React from "react"
-import { Link } from "gatsby"
-
+import AboutMeHero from '../components/about_me_hero'
 import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
-import ResumeContainer from '../components/resume_container'
 
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <ResumeContainer />
+    <AboutMeHero role='Software Engineer' company='Wayfair'/>
   </Layout>
-)
+);
 
 export default IndexPage

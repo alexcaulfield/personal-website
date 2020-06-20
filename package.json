@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "Alex Caulfield <alex@alexcaulfield.com>",
   "dependencies": {
+    "@emotion/core": "^10.0.28",
     "@react-pdf/renderer": "^1.6.8",
     "dotenv": "^8.2.0",
     "gatsby": "^2.18.1",

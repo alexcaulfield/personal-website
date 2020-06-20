@@ -7,50 +7,40 @@
 
 import React from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
-
-import Header from "./header"
 import "./layout.css"
 import "semantic-ui-less/semantic.less"
-import Hero from './hero'
+import Header from "./header"
+import Footer from "./footer";
 
-const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
-
+const Layout = ({ activePanel, children }) => {
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata.title} />
-      <Hero />
       <div
         style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0px 1.0875rem 1.45rem`,
-          paddingTop: 0,
+          display: 'flex',
+          minHeight: '100vh',
+          flexDirection: 'column',
         }}
       >
-        <main>{children}</main>
-        <footer>
-          <p>© {new Date().getFullYear()} Alex Caulfield</p>
-          Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
+        <Header activePanel={activePanel} />
+        <div
+          style={{
+            flexGrow: 1,
+            paddingTop: '8vh',
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          {children}
+        </div>
+        <Footer/>
       </div>
     </>
   )
-}
+};
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
-}
+};
 
 export default Layout
