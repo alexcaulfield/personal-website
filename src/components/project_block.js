@@ -20,7 +20,7 @@ const ProjectBlock = ({
         <Card.Header>{name}</Card.Header>
         <Card.Meta>
           {link && <a href={link} target="_blank"><Icon name='linkify'/></a>}
-          {githublink && <a href={''} target="_blank"><Icon name='github'/></a>}
+          {githublink && <a href={githublink} target="_blank"><Icon name='github'/></a>}
         </Card.Meta>
         {detailsArray.map(detail => {
           return <Card.Description>{detail}</Card.Description>
