@@ -71,8 +71,8 @@ const AboutMeHero = () => {
                   } fileName="alexcaulfield-resume.pdf">
                     {({ blob, url, loading, error }) =>
                       (loading ?
-                          <Button secondary><Icon loading name='spinner' /></Button> :
-                          <Button primary>Download my resume <Icon name='download' /></Button>
+                        <Button secondary><Icon loading name='spinner' /></Button> :
+                        <Button primary>Download my resume <Icon name='download' /></Button>
                       )}
                   </PDFDownloadLink>
                 )}

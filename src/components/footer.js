@@ -1,5 +1,5 @@
 import React from 'react'
-import {Container, Header as SemanticHeader, Icon, Segment, Responsive} from "semantic-ui-react";
+import {Header as SemanticHeader, Icon, Segment} from "semantic-ui-react";
 
 const Footer = () => (
   <Segment.Group horizontal>
