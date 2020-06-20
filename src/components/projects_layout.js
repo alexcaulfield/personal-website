@@ -1,5 +1,5 @@
 import React from 'React';
-import {Container} from "semantic-ui-react";
+import {Container, Card} from "semantic-ui-react";
 import ProjectBlock from "./project_block";
 import {useResumeData} from "../hooks/use_resume_data";
 
@@ -9,22 +9,26 @@ const ProjectsLayout = () => {
   } = useResumeData();
   return (
     <Container>
-      {projectBlocks.map(({node}) => {
-        const {
-          name,
-          details,
-          tags,
-          link,
-        } = node
-        return (
-          <ProjectBlock
-            name={name}
-            details={details}
-            tags={tags}
-            link={link}
-          />
-        )
-      })}
+      <Card.Group>
+        {projectBlocks.map(({node}) => {
+          const {
+            name,
+            details,
+            tags,
+            link,
+            githublink
+          } = node;
+          return (
+            <ProjectBlock
+              name={name}
+              details={details}
+              tags={tags}
+              link={link}
+              githublink={githublink}
+            />
+          )
+        })}
+      </Card.Group>
     </Container>
   );
 };

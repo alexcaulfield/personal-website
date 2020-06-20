@@ -5,35 +5,40 @@ export const useResumeData = () => {
     allGoogleSheetBlocksRow,
     allGoogleSheetHeaderRow
   } = useStaticQuery(graphql`
-      query resumeDataQuery {
-          allGoogleSheetBlocksRow(filter: {}) {
-              edges {
-                  node {
-                      name
-                      type
-                      position
-                      startdate
-                      enddate
-                      city
-                      state
-                      details
-                      tags
-                      link
-                  }
-              }
+    query resumeDataQuery {
+      allGoogleSheetBlocksRow(filter: {}) {
+        edges {
+          node {
+            name
+            type
+            position
+            startdate
+            enddate
+            city
+            state
+            details
+            tags
+            link
+            githublink  
           }
-          allGoogleSheetHeaderRow(filter: {}) {
-              edges {
-                  node {
-                      name
-                      address
-                      email
-                      phone
-                      website
-                  }
-              }
-          }
+        }
       }
+      allGoogleSheetHeaderRow(filter: {}) {
+        edges {
+          node {
+            name
+            address
+            email
+            phone
+            website
+            currentrole
+            currentcompany
+            bio  
+            interests  
+          }
+        }
+      }
+    }
   `)
 
   const workBlocks = allGoogleSheetBlocksRow.edges.filter(({node}) => node.type === 'work');

@@ -35,11 +35,11 @@ const Header = ({ activePanel }) => {
             to='/work'
             active={workActive}
           />
-          <Menu.Item>
-            <Checkbox
-              toggle
-            />
-          </Menu.Item>
+          {/*<Menu.Item>*/}
+          {/*  <Checkbox*/}
+          {/*    toggle*/}
+          {/*  />*/}
+          {/*</Menu.Item>*/}
         </Menu.Menu>
       </Container>
     </Menu>

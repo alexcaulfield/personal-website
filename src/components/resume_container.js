@@ -1,59 +1,17 @@
-import React, {useState, useEffect} from 'react'
+import React from 'react'
 import WorkBlock from './work_block'
 import EducationBlock from './education_block'
-import ProjectBlock from './project_block'
-import { useStaticQuery, graphql } from "gatsby"
-import { PDFDownloadLink } from '@react-pdf/renderer'
-import PdfDocument from '../components/resume_pdf'
 import {  
-  Header, 
-  Button, 
-  Icon,
+  Header,
   Container,
 } from 'semantic-ui-react';
+import {useResumeData} from "../hooks/use_resume_data";
 
-const ResumeContainer = () => {
-  const [isClient, setIsClient] = useState(false)
-
-  useEffect(() => {
-    setIsClient(true)
-  }, [])
-
-  const data = useStaticQuery(graphql`
-    query blocksQuery {
-      allGoogleSheetBlocksRow(filter: {}) {
-        edges {
-          node {
-            name
-            type
-            position
-            startdate
-            enddate
-            city
-            state
-            details
-            tags
-            link
-          }
-        }
-      }
-      allGoogleSheetHeaderRow(filter: {}) {
-        edges {
-          node {
-            name
-            address
-            email
-            phone
-            website
-          }
-        }
-      }
-    }
-  `)
-
-  const workBlocks = data.allGoogleSheetBlocksRow.edges.filter(({node}) => node.type === 'work')
-  const eduBlocks = data.allGoogleSheetBlocksRow.edges.filter(({node}) => node.type === 'education')
-
+const WorkLayout = () => {
+  const {
+    workBlocks,
+    eduBlocks,
+  } = useResumeData();
   return (
     <Container>
       <Header size='medium'>Experience</Header>
@@ -94,7 +52,7 @@ const ResumeContainer = () => {
           city,
           state,
           tags,
-        } = node
+        } = node;
           return (
             <EducationBlock
               name={name}
@@ -109,6 +67,6 @@ const ResumeContainer = () => {
       })}
     </Container>
   )
-}
+};
 
-export default ResumeContainer
+export default WorkLayout
