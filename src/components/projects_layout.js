@@ -1,4 +1,4 @@
-import React from 'React';
+import React from 'react';
 import {Container, Card} from "semantic-ui-react";
 import ProjectBlock from "./project_block";
 import {useResumeData} from "../hooks/use_resume_data";
