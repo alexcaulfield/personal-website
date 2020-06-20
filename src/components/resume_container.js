@@ -8,7 +8,8 @@ import PdfDocument from '../components/resume_pdf'
 import {  
   Header, 
   Button, 
-  Icon, 
+  Icon,
+  Container,
 } from 'semantic-ui-react';
 
 const ResumeContainer = () => {
@@ -52,100 +53,61 @@ const ResumeContainer = () => {
 
   const workBlocks = data.allGoogleSheetBlocksRow.edges.filter(({node}) => node.type === 'work')
   const eduBlocks = data.allGoogleSheetBlocksRow.edges.filter(({node}) => node.type === 'education')
-  const projectBlocks = data.allGoogleSheetBlocksRow.edges.filter(({node}) => node.type === 'project')
 
   return (
-    <>
-      <div style={{padding: 25, textAlign: "center"}}>
-        {isClient && (
-          <PDFDownloadLink document={
-            <PdfDocument 
-              headerNodes={data.allGoogleSheetHeaderRow.edges}
-              workNodes={workBlocks} 
-              eduNodes={eduBlocks}
-              projNodes={projectBlocks}
+    <Container>
+      <Header size='medium'>Experience</Header>
+      {workBlocks.map(({node}) => {
+        const {
+          name,
+          position,
+          startdate,
+          enddate,
+          city,
+          state,
+          details,
+          tags,
+          link,
+        } = node
+          return (
+            <WorkBlock
+              name={name}
+              position={position}
+              startdate={startdate}
+              enddate={enddate}
+              city={city}
+              state={state}
+              details={details}
+              tags={tags}
+              link={link}
             />
-          } fileName="alexcaulfield-resume.pdf">
-            {({ blob, url, loading, error }) => 
-              (loading ? 
-                <Button secondary><Icon loading name='spinner' /></Button> : 
-                <Button primary>Download my resume <Icon name='download' /></Button>
-            )}
-          </PDFDownloadLink> 
-        )}
-      </div>
-         
-      <div>
-        <Header size='medium'>Experience</Header>
-        {workBlocks.map(({node}) => {
-          const {
-            name,
-            position,
-            startdate,
-            enddate,
-            city,
-            state,
-            details,
-            tags,
-            link,
-          } = node
-            return (
-              <WorkBlock
-                name={name}
-                position={position}
-                startdate={startdate}
-                enddate={enddate}
-                city={city}
-                state={state}
-                details={details}
-                tags={tags}
-                link={link}
-              />
-            )
-          }
-        )}
-        <Header size='medium'>Education</Header>
-        {eduBlocks.map(({node}) => {
-          const {
-            name,
-            position,
-            startdate,
-            enddate,
-            city,
-            state,
-            tags,
-          } = node
-            return (
-              <EducationBlock
-                name={name}
-                position={position}
-                startdate={startdate}
-                enddate={enddate}
-                city={city}
-                state={state}
-                tags={tags}
-              />
-            )
-        })}
-        <Header size='medium'>Projects</Header>
-        {projectBlocks.map(({node}) => {
-          const {
-            name,
-            details,
-            tags,
-            link,
-          } = node
-            return (
-              <ProjectBlock
-                name={name}
-                details={details}
-                tags={tags}
-                link={link}
-              />
-            )
-        })}
-      </div>
-    </>
+          )
+        }
+      )}
+      <Header size='medium'>Education</Header>
+      {eduBlocks.map(({node}) => {
+        const {
+          name,
+          position,
+          startdate,
+          enddate,
+          city,
+          state,
+          tags,
+        } = node
+          return (
+            <EducationBlock
+              name={name}
+              position={position}
+              startdate={startdate}
+              enddate={enddate}
+              city={city}
+              state={state}
+              tags={tags}
+            />
+          )
+      })}
+    </Container>
   )
 }
 
