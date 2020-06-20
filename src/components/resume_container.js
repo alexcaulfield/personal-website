@@ -73,11 +73,6 @@ const ResumeContainer = () => {
             )}
           </PDFDownloadLink> 
         )}
-        <div style={{padding: 10}}>
-          <a href="https://www.linkedin.com/in/alexandercaulfield/" target="_blank"><Icon name='linkedin' size='huge'></Icon></a>
-          <a href="https://github.com/alexcaulfield" target="_blank"><Icon name='github' size='huge'></Icon></a>
-          <a href="mailto:alex@alexcaulfield.com"><Icon name='mail' size='huge'></Icon></a>
-        </div>
       </div>
          
       <div>
