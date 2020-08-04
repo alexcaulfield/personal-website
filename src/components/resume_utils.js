@@ -1,17 +1,28 @@
 const getTenureLength = (startDate, endDate) => {
-  const monthDiff = endDate.getMonth() - startDate.getMonth()
-  const yearDiff = endDate.getYear() - startDate.getYear()
-  return monthDiff + (yearDiff * 12) + 1 // adding one to match up with LinkedIn data, they round up
+  const monthDiff = endDate.getMonth() - startDate.getMonth() + 1; // adding one to match up with LinkedIn data, they round up
+  const yearDiff = endDate.getFullYear() - startDate.getFullYear()
+  return [
+    yearDiff,
+    monthDiff,
+  ]
+}
+
+const generateStringFromDates = (years, months) => {
+  const yearString = years > 1 ? 'year' : 'yr';
+  const monthString = months > 1 ? 'mos' : 'mo';
+  return (years > 0 ? `${years} ${yearString} ` : '') + `${months} ${monthString}`;
 }
 
 export const getTenureString = (start, end) => {
   const startDate = new Date(start);
   if (!end) {
     const today = new Date();
-    return `${getTenureLength(startDate, today)} mos`
+    const [years, months] = getTenureLength(startDate, today);
+    return generateStringFromDates(years, months);
   }
   const endDate = new Date(end);
-  return `${getTenureLength(startDate, endDate)} mos`;
+  const [years, months] = getTenureLength(startDate, endDate);
+  return generateStringFromDates(years, months);
 }
 
 export const getImgData = (name, photoData) => {
