@@ -6,5 +6,3 @@
 * GraphQL
 * Google Sheets
 * Semantic UI
-
-### Resources

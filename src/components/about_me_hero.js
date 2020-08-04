@@ -55,7 +55,7 @@ const AboutMeHero = () => {
               />
             </Grid.Column>
             <Grid.Column mobile={16} tablet={16} widescreen={8} largeScreen={8} computer={8}>
-              <SemanticHeader as='h1'>Hey! 👋 My name is {name}</SemanticHeader>
+              <SemanticHeader as='h1'>Hey! <span role="img" aria-label="wave">👋</span> My name is {name}</SemanticHeader>
               <SemanticHeader as='h3'>I'm currently a {currentrole} at {currentcompany}</SemanticHeader>
               <SemanticHeader as='h4'>{bio}</SemanticHeader>
               <SemanticHeader as='h4'>{interests}</SemanticHeader>

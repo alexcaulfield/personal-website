@@ -1,7 +1,7 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
-import { Menu, Container, Checkbox } from 'semantic-ui-react'
+import { Menu, Container } from 'semantic-ui-react'
 
 const PROJECTS = 'Projects';
 const WORK = 'Work';
