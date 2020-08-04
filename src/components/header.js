@@ -16,7 +16,7 @@ const Header = ({ activePanel }) => {
       fixed='top'
       size='massive'
     >
-      <Container>
+      <div className='ui container' style={{backgroundColor: 'white'}}>
         <Menu.Item
           name='AC'
           as={Link}
@@ -35,13 +35,8 @@ const Header = ({ activePanel }) => {
             to='/work'
             active={workActive}
           />
-          {/*<Menu.Item>*/}
-          {/*  <Checkbox*/}
-          {/*    toggle*/}
-          {/*  />*/}
-          {/*</Menu.Item>*/}
         </Menu.Menu>
-      </Container>
+      </div>
     </Menu>
   );
 };
