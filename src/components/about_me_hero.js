@@ -11,12 +11,8 @@ const AboutMeHero = () => {
     query {
       file(relativePath: {eq: "hero.jpg"}) {
         childImageSharp {
-          fixed(width: 500, quality: 90) {
-            base64
-            width
-            height
-            src
-            srcSet
+          fluid(maxWidth: 500, quality: 90) {
+            ...GatsbyImageSharpFluid
           }
         }
       }
@@ -43,18 +39,21 @@ const AboutMeHero = () => {
     bio,
     interests,
   } = node;
+  console.log(imgData)
   return (
     <Container>
       <Responsive>
         <Grid>
           <Grid.Row>
-            <Grid.Column widescreen={8} largeScreen={8} computer={8} only='computer'>
-              <Img
-                fixed={imgData.file.childImageSharp.fixed}
-                alt="An image from my travels"
-              />
+            <Grid.Column widescreen={8} computer={16} largeScreen={8} mobile={16} tablet={16} textAlign='center'>
+              <div style={{marginBottom: '2vh'}}>
+                <Img
+                  fluid={imgData.file.childImageSharp.fluid}
+                  alt="An image from my travels"
+                />
+              </div>
             </Grid.Column>
-            <Grid.Column mobile={16} tablet={16} widescreen={8} largeScreen={8} computer={8}>
+            <Grid.Column mobile={16} tablet={16} widescreen={8} largeScreen={8} computer={16}>
               <SemanticHeader as='h1'>Hey! <span role="img" aria-label="wave">👋</span> My name is {name}</SemanticHeader>
               <SemanticHeader as='h3'>I'm currently a {currentrole} at {currentcompany}</SemanticHeader>
               <SemanticHeader as='h4'>{bio}</SemanticHeader>
