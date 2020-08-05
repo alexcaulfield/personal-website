@@ -1,9 +1,12 @@
+import moment from 'moment';
+
 const getTenureLength = (startDate, endDate) => {
-  const monthDiff = endDate.getMonth() - startDate.getMonth() + 1; // adding one to match up with LinkedIn data, they round up
-  const yearDiff = endDate.getFullYear() - startDate.getFullYear()
+  const monthDiff = endDate.diff(startDate, 'months')
+  const years = endDate.diff(startDate, 'years')
+  const months = monthDiff - years * 12
   return [
-    yearDiff,
-    monthDiff,
+    years,
+    months,
   ]
 }
 
@@ -14,13 +17,13 @@ const generateStringFromDates = (years, months) => {
 }
 
 export const getTenureString = (start, end) => {
-  const startDate = new Date(start);
+  const startDate = moment(start);
   if (!end) {
-    const today = new Date();
+    const today = moment();
     const [years, months] = getTenureLength(startDate, today);
     return generateStringFromDates(years, months);
   }
-  const endDate = new Date(end);
+  const endDate = moment(end);
   const [years, months] = getTenureLength(startDate, endDate);
   return generateStringFromDates(years, months);
 }
