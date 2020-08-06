@@ -30,10 +30,20 @@ export const getTenureString = (start, end) => {
 
 export const getImgData = (name, photoData) => {
   const splitNameString = name.split(' ')
-  const logo = splitNameString.length > 1 ?
-    (splitNameString[0] === 'Needham' ?
-      photoData.allImageSharp.nodes[0].fixed.src :`//logo.clearbit.com/${splitNameString[0]}.edu`) 
-    : `//logo.clearbit.com/${name}.com`;
+  let logo = '';
+  switch (splitNameString[0]) {
+    case 'Needham':
+      logo = photoData.allImageSharp.nodes[0].fixed.src;
+      break;
+    case 'Tufts':
+      logo = '//logo.clearbit.com/tufts.edu';
+      break;
+    case 'Brazilian':
+      logo = '//logo.clearbit.com/verdeamarelo.org';
+      break;
+    default:
+      logo = `//logo.clearbit.com/${name.replace(/\W/g, '')}.com`;
+  }
   return {
     logo: logo,
     alt: `${name} Logo`
