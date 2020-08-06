@@ -28,6 +28,7 @@ const SkillSelector = ({
                   basic
                   onClick={() => handleSkillSelect(skill)}
                   active={skillToSelect === skill}
+                  disabled={skillToSelect !== skill && skillToSelect !== ''}
                 >
                   {skill}
                 </Button>

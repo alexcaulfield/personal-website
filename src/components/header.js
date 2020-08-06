@@ -3,11 +3,9 @@ import PropTypes from "prop-types"
 import React from "react"
 import { Menu } from 'semantic-ui-react'
 
-const PROJECTS = 'Projects';
 const WORK = 'Work';
 
 const Header = ({ activePanel }) => {
-  const projectActive = activePanel === PROJECTS;
   const workActive = activePanel === WORK;
   return (
     <Menu
@@ -23,12 +21,6 @@ const Header = ({ activePanel }) => {
           to='/'
         />
         <Menu.Menu position='right'>
-          <Menu.Item
-            name={PROJECTS}
-            as={Link}
-            to='/projects'
-            active={projectActive}
-          />
           <Menu.Item
             name={WORK}
             as={Link}
