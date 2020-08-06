@@ -1,9 +1,12 @@
+import moment from 'moment';
+
 const getTenureLength = (startDate, endDate) => {
-  const monthDiff = endDate.getMonth() - startDate.getMonth() + 1; // adding one to match up with LinkedIn data, they round up
-  const yearDiff = endDate.getFullYear() - startDate.getFullYear()
+  const monthDiff = endDate.diff(startDate, 'months')
+  const years = endDate.diff(startDate, 'years')
+  const months = monthDiff - years * 12
   return [
-    yearDiff,
-    monthDiff,
+    years,
+    months,
   ]
 }
 
@@ -14,23 +17,33 @@ const generateStringFromDates = (years, months) => {
 }
 
 export const getTenureString = (start, end) => {
-  const startDate = new Date(start);
+  const startDate = moment(start);
   if (!end) {
-    const today = new Date();
+    const today = moment();
     const [years, months] = getTenureLength(startDate, today);
     return generateStringFromDates(years, months);
   }
-  const endDate = new Date(end);
+  const endDate = moment(end);
   const [years, months] = getTenureLength(startDate, endDate);
   return generateStringFromDates(years, months);
 }
 
 export const getImgData = (name, photoData) => {
   const splitNameString = name.split(' ')
-  const logo = splitNameString.length > 1 ?
-    (splitNameString[0] === 'Needham' ?
-      photoData.allImageSharp.nodes[0].fixed.src :`//logo.clearbit.com/${splitNameString[0]}.edu`) 
-    : `//logo.clearbit.com/${name}.com`;
+  let logo = '';
+  switch (splitNameString[0]) {
+    case 'Needham':
+      logo = photoData.allImageSharp.nodes[0].fixed.src;
+      break;
+    case 'Tufts':
+      logo = '//logo.clearbit.com/tufts.edu';
+      break;
+    case 'Brazilian':
+      logo = '//logo.clearbit.com/verdeamarelo.org';
+      break;
+    default:
+      logo = `//logo.clearbit.com/${name.replace(/\W/g, '')}.com`;
+  }
   return {
     logo: logo,
     alt: `${name} Logo`

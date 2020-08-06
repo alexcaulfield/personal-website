@@ -55,5 +55,29 @@ module.exports = {
           credentials: env_creds
       }
     },
+    {
+      resolve: 'gatsby-source-google-sheets',
+      options: {
+        spreadsheetId: '19DioFyzhNk41wCiZe6R6pYRyBU2W9wzx9as9CFwtSsE',
+        worksheetTitle: 'experience',
+        credentials: env_creds
+      }
+    },
+    {
+      resolve: 'gatsby-source-google-sheets',
+      options: {
+        spreadsheetId: '19DioFyzhNk41wCiZe6R6pYRyBU2W9wzx9as9CFwtSsE',
+        worksheetTitle: 'roles',
+        credentials: env_creds
+      }
+    },
+    {
+      resolve: 'gatsby-source-google-sheets',
+      options: {
+        spreadsheetId: '19DioFyzhNk41wCiZe6R6pYRyBU2W9wzx9as9CFwtSsE',
+        worksheetTitle: 'skillgroups',
+        credentials: env_creds
+      }
+    },
   ],
 }

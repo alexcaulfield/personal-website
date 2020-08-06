@@ -6,7 +6,6 @@ import {
   Container,
 } from 'semantic-ui-react';
 import {useResumeData} from "../hooks/use_resume_data";
-import 'fix-date'
 
 const WorkLayout = () => {
   const {
