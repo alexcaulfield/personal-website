@@ -75,14 +75,6 @@ module.exports = {
       resolve: 'gatsby-source-google-sheets',
       options: {
         spreadsheetId: '19DioFyzhNk41wCiZe6R6pYRyBU2W9wzx9as9CFwtSsE',
-        worksheetTitle: 'skills',
-        credentials: env_creds
-      }
-    },
-    {
-      resolve: 'gatsby-source-google-sheets',
-      options: {
-        spreadsheetId: '19DioFyzhNk41wCiZe6R6pYRyBU2W9wzx9as9CFwtSsE',
         worksheetTitle: 'skillgroups',
         credentials: env_creds
       }
