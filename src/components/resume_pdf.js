@@ -12,7 +12,7 @@ Font.register({src: 'https://fonts.gstatic.com/s/lato/v16/S6u9w4BMUTPHh6UVSwiPHA
 Font.register({src: 'https://fonts.gstatic.com/s/lato/v16/S6u8w4BMUTPHjxsAXC-vNiXg7Q.ttf', family: 'LatoItalic', fontStyle: 'normal', fontWeight:'normal'})
 
 const PageWrapper = styled.Page`
-  margin: 24px;
+  padding: 24px;
   font-size: 12px;
   font-family: LatoRegular;
 `
