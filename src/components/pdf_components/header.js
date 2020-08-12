@@ -1,23 +1,24 @@
-import React from 'react'
-import { Text, View, StyleSheet } from '@react-pdf/renderer'
+import React from 'react';
+import { Text, View } from '@react-pdf/renderer';
+import styled from '@react-pdf/styled-components';
 
-const styles = StyleSheet.create({
-  header: {
-    paddingBottom: 8,
-  },
-  name: {
-    textAlign: 'center',
-    fontSize: 18,
-    fontFamily: 'LatoBold',
-  },
-  detailsBlock: {
-    textAlign: 'center',
-    display: 'inline-block'
-  },
-  detail: {
+const secondaryColor = '#2185D0'
 
-  }
-})
+const Header = styled.View`
+  text-align: center;
+  margin-bottom: 8px;
+`;
+
+const Name = styled.Text`
+  font-size: 24px;
+  font-family: LatoBold;
+`;
+
+const Subheader = styled.Text`
+  font-size: 10px;
+  color: ${props => props.color};
+  margin-bottom: 4px;
+`;
 
 const HeaderPdf = ({
   name,
@@ -27,13 +28,13 @@ const HeaderPdf = ({
   website,
 }) => {
   return (
-    <View styles={styles.header} fixed>
-      <Text style={styles.name}>{name}</Text>
-      <View style={styles.detailsBlock}>
-        <Text>Software Engineer based in {address}</Text>
-        <Text>{email} &#183; {website} &#183; {phone}</Text>
+    <Header fixed>
+      <Name>{name}</Name>
+      <View>
+        <Subheader color={secondaryColor}>Software Engineer based in {address}</Subheader>
+        <Subheader style='black'>{email}   |   {website}   |   {phone}</Subheader>
       </View>
-    </View>
+    </Header>
   )
 }
 

@@ -7,6 +7,7 @@
   "dependencies": {
     "@emotion/core": "^10.0.28",
     "@react-pdf/renderer": "^1.6.8",
+    "@react-pdf/styled-components": "^1.4.0",
     "dotenv": "^8.2.0",
     "fix-date": "^1.1.6",
     "gatsby": "^2.18.1",

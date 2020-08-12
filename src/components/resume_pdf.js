@@ -4,30 +4,26 @@ import HeaderPdf from '../components/pdf_components/header'
 import WorkPdfBlock from '../components/pdf_components/work_pdf_block'
 import EduPdfBlock from '../components/pdf_components/edu_pdf_block'
 import ProjPdfBlock from '../components/pdf_components/proj_pdf_block'
+import styled from '@react-pdf/styled-components';
 
 // https://fonts.googleapis.com/css?family=Lato
 Font.register({src: 'https://fonts.gstatic.com/s/lato/v16/S6uyw4BMUTPHjx4wWyWtFCc.ttf', family: 'LatoRegular', fontStyle: 'normal', fontWeight:'normal'})
 Font.register({src: 'https://fonts.gstatic.com/s/lato/v16/S6u9w4BMUTPHh6UVSwiPHA3q5d0.ttf', family: 'LatoBold', fontStyle: 'normal', fontWeight:'bold'})
 Font.register({src: 'https://fonts.gstatic.com/s/lato/v16/S6u8w4BMUTPHjxsAXC-vNiXg7Q.ttf', family: 'LatoItalic', fontStyle: 'normal', fontWeight:'normal'})
 
-const styles = StyleSheet.create({
-  page: {
-    padding: 24,
-    fontSize: 12,
-    fontFamily: 'LatoRegular',
-  },
-  section: {
-    margin: 10,
-  },
-  header: {
-    fontSize: 14,
-    fontFamily: 'LatoBold',
-    paddingTop: 4,
-    paddingBottom: 6,
-  }
-})
+const PageWrapper = styled.Page`
+  margin: 24px;
+  font-size: 12px;
+  font-family: LatoRegular;
+`
 
-// Create Document Component
+const SectionHeader = styled.Text`
+  font-size: 16px;
+  font-family: LatoBold;
+  margin-top: 4px;
+  margin-bottom: 6px;
+`
+
 const PdfDocument = ({    
   headerNodes,
   workNodes,
@@ -41,12 +37,12 @@ const PdfDocument = ({
       subject="Resume"
       creator="Alex Caulfield"
     >
-      <Page size="A4" style={styles.page} wrap={false}>
-        <View style={styles.section}>
+      <PageWrapper size="A4" wrap={false}>
+        <View>
           {headerNodes[0] &&
             <HeaderPdf {...headerNodes[0].node} />
           }
-          <Text style={styles.header}>Experience</Text>
+          <SectionHeader>Experience</SectionHeader>
           {workNodes.map(({node}) => {
             const {
               name,
@@ -71,7 +67,7 @@ const PdfDocument = ({
               />
             )
           })}
-          <Text style={styles.header}>Education</Text>
+          <SectionHeader>Education</SectionHeader>
           {eduNodes.map(({node}) => {
             const {
               name,
@@ -94,7 +90,7 @@ const PdfDocument = ({
                 />
               )
           })}
-          <Text style={styles.header}>Projects</Text>
+          <SectionHeader>Projects</SectionHeader>
           {projNodes.map(({node}) => {
             const {
               name,
@@ -110,7 +106,7 @@ const PdfDocument = ({
               )
           })}
         </View>
-      </Page>
+      </PageWrapper>
     </Document>
   )
 };
