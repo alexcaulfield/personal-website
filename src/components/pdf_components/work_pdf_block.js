@@ -6,15 +6,16 @@ const styles = StyleSheet.create({
     paddingBottom: 8,
   },
   headline: {
+    color: '#b20000',
     flexDirection: 'row',
     paddingBottom: 4,
   },
-  name: {
+  company: {
     fontSize: 12,
     fontFamily: 'LatoBold',
     marginRight: 4,
   },
-  company: {
+  name: {
     flex: 1,
     fontFamily: 'LatoItalic',
     marginRight: 4,
@@ -26,13 +27,15 @@ const styles = StyleSheet.create({
     fontFamily: 'LatoRegular',
   },
   date: {
+    color: '#000',
     justifyContent: "flex-end"
   },
   detail: {
     marginBottom: 4,
   },
   detailsBlock: {
-    fontSize: 11
+    fontSize: 11,
+    marginLeft: 8,
   },
   skills: {
     flexDirection: 'row',
@@ -58,13 +61,12 @@ const WorkPdfBlock = ({
     details,
     tags,
 }) => {
-
   const detailsArray = details.split(/\n/g)
   return (
     <View style={styles.workBlock} fixed>
       <View style={styles.headline}>
-        <Text style={styles.name}>{position}</Text>
-        <Text style={styles.company}>{name} <Text style={styles.location}>&#183; {city}, {state}</Text></Text>
+        <Text style={styles.company}>{name}</Text>
+        <Text style={styles.name}>{position} <Text style={styles.location}>&#183; {city}, {state}</Text></Text>
         <Text style={styles.date}>{startdate} - {enddate ? enddate : 'Present'}</Text>
       </View>
       <View style={styles.detailsBlock}>
