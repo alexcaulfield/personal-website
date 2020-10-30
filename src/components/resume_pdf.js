@@ -15,13 +15,18 @@ const PageWrapper = styled.Page`
   padding: 24px;
   font-size: 12px;
   font-family: LatoRegular;
-`
+`;
 
 const SectionHeader = styled.Text`
   font-size: 16px;
   font-family: LatoBold;
   margin-top: 4px;
-  margin-bottom: 6px;
+  margin-bottom: 0px;
+`;
+
+const SectionSplitter = styled.Text`
+  margin-top: -10px;
+  margin-bottom: 4px;
 `
 
 const PdfDocument = ({    
@@ -43,6 +48,7 @@ const PdfDocument = ({
             <HeaderPdf {...headerNodes[0].node} />
           }
           <SectionHeader>Experience</SectionHeader>
+          <SectionSplitter>______________________________________________________________________________________________________________________</SectionSplitter>
           {workNodes.map(({node}) => {
             const {
               name,
@@ -67,7 +73,28 @@ const PdfDocument = ({
               />
             )
           })}
+          <SectionHeader>Projects</SectionHeader>
+          <SectionSplitter>______________________________________________________________________________________________________________________</SectionSplitter>
+          {projNodes.map(({node}) => {
+            const {
+              name,
+              details,
+              tags,
+              link,
+              githublink,
+            } = node
+              return (
+                <ProjPdfBlock
+                  name={name}
+                  details={details}
+                  tags={tags}
+                  link={link}
+                  githublink={githublink}
+                />
+              )
+          })}
           <SectionHeader>Education</SectionHeader>
+          <SectionSplitter>______________________________________________________________________________________________________________________</SectionSplitter>
           {eduNodes.map(({node}) => {
             const {
               name,
@@ -77,33 +104,20 @@ const PdfDocument = ({
               city,
               state,
               tags,
-            } = node
-              return (
-                <EduPdfBlock
-                  name={name}
-                  position={position}
-                  startdate={startdate}
-                  enddate={enddate}
-                  city={city}
-                  state={state}
-                  tags={tags}
-                />
-              )
-          })}
-          <SectionHeader>Projects</SectionHeader>
-          {projNodes.map(({node}) => {
-            const {
-              name,
               details,
-              tags,
             } = node
-              return (
-                <ProjPdfBlock
-                  name={name}
-                  details={details}
-                  tags={tags}
-                />
-              )
+            return (
+              <EduPdfBlock
+                name={name}
+                position={position}
+                startdate={startdate}
+                enddate={enddate}
+                city={city}
+                state={state}
+                tags={tags}
+                details={details}
+              />
+            )
           })}
         </View>
       </PageWrapper>

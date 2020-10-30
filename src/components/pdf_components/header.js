@@ -1,16 +1,17 @@
 import React from 'react';
-import { Text, View } from '@react-pdf/renderer';
+import { Text, View, Link } from '@react-pdf/renderer';
 import styled from '@react-pdf/styled-components';
 
-const secondaryColor = '#2185D0'
+const secondaryColor = '#b20000'
 
 const Header = styled.View`
+  margin-top: -8px;
   text-align: center;
   margin-bottom: 8px;
 `;
 
 const Name = styled.Text`
-  font-size: 24px;
+  font-size: 18px;
   font-family: LatoBold;
 `;
 
@@ -32,7 +33,7 @@ const HeaderPdf = ({
       <Name>{name}</Name>
       <View>
         <Subheader color={secondaryColor}>Software Engineer based in {address}</Subheader>
-        <Subheader style='black'>{email}   |   {website}   |   {phone}</Subheader>
+        <Subheader style='black'><Link src={`mailto:${email}`}>{email}</Link>   |   <Link src={website}>{website}</Link>  |   {phone}</Subheader>
       </View>
     </Header>
   )

@@ -1,11 +1,12 @@
 import React from 'react'
-import { Text, View, StyleSheet } from '@react-pdf/renderer'
+import { Text, View, StyleSheet, Link } from '@react-pdf/renderer'
 
 const styles = StyleSheet.create({
   workBlock: {
     paddingBottom: 8,
   },
   headline: {
+    color: '#b20000',
     flexDirection: 'row',
     paddingBottom: 4,
   },
@@ -26,13 +27,15 @@ const styles = StyleSheet.create({
     fontFamily: 'LatoRegular',
   },
   date: {
+    color: '#000',
     justifyContent: "flex-end"
   },
   detail: {
     marginBottom: 4,
   },
   detailsBlock: {
-    fontSize: 11
+    fontSize: 11,
+    marginLeft: 8,
   },
   skills: {
     flexDirection: 'row',
@@ -52,12 +55,15 @@ const ProjPdfBlock = ({
   name,
   details,
   tags,
+  link,
+  githublink,
 }) => {
   const detailsArray = details.split(/\n/g)
   return (
     <View style={styles.workBlock} fixed>
       <View style={styles.headline}>
-        <Text style={styles.name}>{name}</Text>
+        <Text style={styles.name}><Link src={link}>{name}</Link> </Text>
+        <Text style={styles.company}><Link src={githublink}>GitHub</Link></Text>
       </View>
       <View style={styles.detailsBlock}>
         {detailsArray.map(detail => {

@@ -6,15 +6,16 @@ const styles = StyleSheet.create({
     paddingBottom: 8,
   },
   headline: {
+    color: '#b20000',
     flexDirection: 'row',
     paddingBottom: 4,
   },
-  name: {
+  company: {
     fontSize: 12,
     fontFamily: 'LatoBold',
     marginRight: 4,
   },
-  company: {
+  name: {
     flex: 1,
     fontFamily: 'LatoItalic',
     marginRight: 4,
@@ -26,13 +27,15 @@ const styles = StyleSheet.create({
     fontFamily: 'LatoRegular',
   },
   date: {
+    color: '#000',
     justifyContent: "flex-end"
   },
   detail: {
     marginBottom: 4,
   },
   detailsBlock: {
-    fontSize: 11
+    fontSize: 11,
+    marginLeft: 8,
   },
   skills: {
     flexDirection: 'row',
@@ -56,22 +59,28 @@ const EduPdfBlock = ({
     city,
     state,
     tags,
+    details,
 }) => {
   const shouldShowLocation = (((position && name)) ? (position.length + name.length) < 40 : false) || !position
-  const shouldShowPosition = !!position
   const shouldShowSkills = !!tags
+  const detailsArray = details.split(/\n/g)
   return (
     <View style={styles.workBlock} fixed>
       <View style={styles.headline}>
-        {shouldShowPosition && <Text style={styles.name}>{position}</Text>}
-        <Text style={styles.company}>{name} {shouldShowLocation && <Text style={styles.location}>&#183; {city}, {state}</Text>}</Text>
+        <Text style={styles.company}>{name}</Text>
+        <Text style={styles.name}>{position} {shouldShowLocation && <Text style={styles.location}>&#183; {city}, {state}</Text>}</Text>
         <Text style={styles.date}>{startdate} - {enddate ? enddate : 'Present'}</Text>
       </View>
-      {shouldShowSkills && 
-      <View style={styles.skills}>
-        <Text style={styles.skillsLabel}>Relevant Skills:</Text>
-        <Text style={styles.skillsList}>{tags}</Text>
+      <View style={styles.detailsBlock}>
+        {detailsArray.map(detail => {
+          return <Text style={styles.detail}>{detail}</Text>
+        })}
       </View>
+      {shouldShowSkills && 
+        <View style={styles.skills}>
+          <Text style={styles.skillsLabel}>Relevant Skills:</Text>
+          <Text style={styles.skillsList}>{tags}</Text>
+        </View>
       }
     </View>
   )
