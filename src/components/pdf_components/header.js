@@ -27,13 +27,14 @@ const HeaderPdf = ({
   email,
   phone,
   website,
+  github,
 }) => {
   return (
     <Header fixed>
       <Name>{name}</Name>
       <View>
         <Subheader color={secondaryColor}>Software Engineer based in {address}</Subheader>
-        <Subheader style='black'><Link src={`mailto:${email}`}>{email}</Link>   |   <Link src={website}>{website}</Link>  |   {phone}</Subheader>
+        <Subheader style='black'><Link src={website}>{website}</Link>  |   <Link src={github}>{github}</Link>  |   <Link src={`mailto:${email}`}>{email}</Link>   |   {phone}</Subheader>
       </View>
     </Header>
   )

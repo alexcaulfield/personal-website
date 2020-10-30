@@ -31,6 +31,7 @@ export const useResumeData = () => {
             email
             phone
             website
+            github
             currentrole
             currentcompany
             bio  
