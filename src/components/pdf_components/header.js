@@ -5,7 +5,6 @@ import styled from '@react-pdf/styled-components';
 const secondaryColor = '#b20000'
 
 const Header = styled.View`
-  margin-top: -8px;
   text-align: center;
   margin-bottom: 8px;
 `;

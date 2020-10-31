@@ -1,17 +1,17 @@
 import React from 'react'
 import { Text, View, StyleSheet } from '@react-pdf/renderer'
 
-const styles = StyleSheet.create({
+export const styles = StyleSheet.create({
   workBlock: {
     paddingBottom: 8,
   },
   headline: {
+    fontSize: 11,
     color: '#b20000',
     flexDirection: 'row',
     paddingBottom: 4,
   },
   company: {
-    fontSize: 12,
     fontFamily: 'LatoBold',
     marginRight: 4,
   },
@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
     marginBottom: 4,
   },
   detailsBlock: {
-    fontSize: 11,
+    fontSize: 10,
     marginLeft: 8,
   },
   skills: {

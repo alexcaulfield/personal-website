@@ -1,55 +1,6 @@
-import React from 'react'
-import { Text, View, StyleSheet, Link } from '@react-pdf/renderer'
-
-const styles = StyleSheet.create({
-  workBlock: {
-    paddingBottom: 8,
-  },
-  headline: {
-    color: '#b20000',
-    flexDirection: 'row',
-    paddingBottom: 4,
-  },
-  name: {
-    fontSize: 12,
-    fontFamily: 'LatoBold',
-    marginRight: 4,
-  },
-  company: {
-    flex: 1,
-    fontFamily: 'LatoItalic',
-    marginRight: 4,
-  },
-  location: {
-    flex: 1,
-    marginLeft: 'auto',
-    marginRight: 4,
-    fontFamily: 'LatoRegular',
-  },
-  date: {
-    color: '#000',
-    justifyContent: "flex-end"
-  },
-  detail: {
-    marginBottom: 4,
-  },
-  detailsBlock: {
-    fontSize: 11,
-    marginLeft: 8,
-  },
-  skills: {
-    flexDirection: 'row',
-    fontSize: 10,
-    fontFamily: 'LatoBold',
-  },
-  skillsLabel: {
-    marginRight: 4,
-  },
-  skillsList: {
-    flex: 1,
-    fontFamily: 'LatoRegular',
-  },
-})
+import React from 'react';
+import { Text, View, Link } from '@react-pdf/renderer';
+import {styles} from "./work_pdf_block";
 
 const ProjPdfBlock = ({
   name,
@@ -62,8 +13,9 @@ const ProjPdfBlock = ({
   return (
     <View style={styles.workBlock} fixed>
       <View style={styles.headline}>
-        <Text style={styles.name}><Link src={link}>{name}</Link> </Text>
-        <Text style={styles.company}><Link src={githublink}>GitHub</Link></Text>
+        <Text style={styles.company}><Link src={link}>{name}</Link></Text>
+        <Text>&#183;{' '}</Text>
+        <Text style={styles.name}><Link src={githublink}>GitHub</Link></Text>
       </View>
       <View style={styles.detailsBlock}>
         {detailsArray.map(detail => {

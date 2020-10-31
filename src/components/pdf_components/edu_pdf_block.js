@@ -1,55 +1,6 @@
 import React from 'react'
-import { Text, View, StyleSheet } from '@react-pdf/renderer'
-
-const styles = StyleSheet.create({
-  workBlock: {
-    paddingBottom: 8,
-  },
-  headline: {
-    color: '#b20000',
-    flexDirection: 'row',
-    paddingBottom: 4,
-  },
-  company: {
-    fontSize: 12,
-    fontFamily: 'LatoBold',
-    marginRight: 4,
-  },
-  name: {
-    flex: 1,
-    fontFamily: 'LatoItalic',
-    marginRight: 4,
-  },
-  location: {
-    flex: 1,
-    marginLeft: 'auto',
-    marginRight: 4,
-    fontFamily: 'LatoRegular',
-  },
-  date: {
-    color: '#000',
-    justifyContent: "flex-end"
-  },
-  detail: {
-    marginBottom: 4,
-  },
-  detailsBlock: {
-    fontSize: 11,
-    marginLeft: 8,
-  },
-  skills: {
-    flexDirection: 'row',
-    fontSize: 10,
-    fontFamily: 'LatoBold',
-  },
-  skillsLabel: {
-    marginRight: 4,
-  },
-  skillsList: {
-    flex: 1,
-    fontFamily: 'LatoRegular',
-  },
-})
+import { Text, View } from '@react-pdf/renderer'
+import {styles} from "./work_pdf_block";
 
 const EduPdfBlock = ({
     name,
