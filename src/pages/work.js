@@ -1,9 +1,9 @@
-import React from 'react';
+import React from "react"
 import Layout from "../components/layout"
-import SEO from "../components/seo";
+import SEO from "../components/seo"
 import WorkPageLayout from "../components/work_page_layout"
 
-const PAGE_NAME = 'Work'
+const PAGE_NAME = "Work"
 
 const Work = () => {
   return (
@@ -13,4 +13,4 @@ const Work = () => {
     </Layout>
   )
 }
-export default Work;
+export default Work

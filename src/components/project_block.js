@@ -1,26 +1,24 @@
-import React from 'react'
-import {
-  Button,
-  Card,
-  Icon,
-} from 'semantic-ui-react';
+import React from "react"
+import { Button, Card, Icon } from "semantic-ui-react"
 
-const ProjectBlock = ({
-  name,
-  details,
-  tags,
-  link,
-  githublink
-}) => {
-  const detailsArray = details.split(/\n/g);
-  const tagsArray = tags ? tags.split(', ') : [];
+const ProjectBlock = ({ name, details, tags, link, githublink }) => {
+  const detailsArray = details.split(/\n/g)
+  const tagsArray = tags ? tags.split(", ") : []
   return (
     <Card>
       <Card.Content>
         <Card.Header>{name}</Card.Header>
         <Card.Meta>
-          {link && <a href={link} target="_blank" rel="noopener noreferrer"><Icon name='linkify'/></a>}
-          {githublink && <a href={githublink} target="_blank" rel="noopener noreferrer"><Icon name='github'/></a>}
+          {link && (
+            <a href={link} target="_blank" rel="noopener noreferrer">
+              <Icon name="linkify" />
+            </a>
+          )}
+          {githublink && (
+            <a href={githublink} target="_blank" rel="noopener noreferrer">
+              <Icon name="github" />
+            </a>
+          )}
         </Card.Meta>
         {detailsArray.map(detail => {
           return <Card.Description>{detail}</Card.Description>
@@ -33,6 +31,6 @@ const ProjectBlock = ({
       </Card.Content>
     </Card>
   )
-};
+}
 
 export default ProjectBlock
