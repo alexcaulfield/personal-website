@@ -1,5 +1,5 @@
 import React from "react"
-import { Text, View, Link } from "@react-pdf/renderer"
+import { View, Link } from "@react-pdf/renderer"
 import styled from "@react-pdf/styled-components"
 
 const secondaryColor = "#b20000"
@@ -28,7 +28,7 @@ const HeaderPdf = ({ name, address, email, phone, website, github }) => {
         <Subheader color={secondaryColor}>
           Software Engineer based in {address}
         </Subheader>
-        <Subheader style="black">
+        <Subheader style={{color: "black"}}>
           <Link src={website}>{website}</Link> |{" "}
           <Link src={github}>{github}</Link> |{" "}
           <Link src={`mailto:${email}`}>{email}</Link> | {phone}

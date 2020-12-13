@@ -1,11 +1,8 @@
 import React from "react"
 import {
   Font,
-  Page,
-  Text,
   View,
   Document,
-  StyleSheet,
 } from "@react-pdf/renderer"
 import HeaderPdf from "../components/pdf_components/header"
 import WorkPdfBlock from "../components/pdf_components/work_pdf_block"
