@@ -2,27 +2,25 @@ import { graphql, useStaticQuery } from "gatsby"
 
 const joinRolesToExperiences = (roles, experiences) => {
   return experiences.map(experience => {
-    const rolesForExperience = roles.filter(role => role.place === experience.place && role.type === experience.type)
-    const rolesFinal = rolesForExperience.map(({
-      role,
-      startdate,
-      enddate,
-      description,
-      skills,
-    }) => {
-      let splitSkills = []
-      if (skills) {
-        splitSkills = skills.split(', ')
+    const rolesForExperience = roles.filter(
+      role => role.place === experience.place && role.type === experience.type
+    )
+    const rolesFinal = rolesForExperience.map(
+      ({ role, startdate, enddate, description, skills }) => {
+        let splitSkills = []
+        if (skills) {
+          splitSkills = skills.split(", ")
+        }
+        const details = description.split(/\n/g)
+        return {
+          role,
+          startdate,
+          enddate,
+          details: details,
+          skills: splitSkills,
+        }
       }
-      const details = description.split(/\n/g)
-      return {
-        role,
-        startdate,
-        enddate,
-        details: details,
-        skills: splitSkills,
-      }
-    })
+    )
     return {
       ...experience,
       roles: rolesFinal,
@@ -77,57 +75,63 @@ export const useNewResumeData = () => {
         }
       }
     }
-  `);
+  `)
 
-  const experiences = allGoogleSheetExperienceRow.edges.map(({node}) => node);
-  const roles       = allGoogleSheetRolesRow.edges.map(({node}) => node);
-  const joinedExperiences = joinRolesToExperiences(roles, experiences);
+  const experiences = allGoogleSheetExperienceRow.edges.map(({ node }) => node)
+  const roles = allGoogleSheetRolesRow.edges.map(({ node }) => node)
+  const joinedExperiences = joinRolesToExperiences(roles, experiences)
 
-  const skillBlocks = allGoogleSheetSkillgroupsRow.edges.map(({node}) => node);
+  const skillBlocks = allGoogleSheetSkillgroupsRow.edges.map(({ node }) => node)
   const allSkills = {
     Frontend: skillBlocks.reduce((skills, skillBlock) => {
       if (skillBlock.frontend !== null) {
-        return [...skills, skillBlock.frontend];
+        return [...skills, skillBlock.frontend]
       }
-      return skills;
+      return skills
     }, []),
     Backend: skillBlocks.reduce((skills, skillBlock) => {
       if (skillBlock.backend !== null) {
-        return [...skills, skillBlock.backend];
+        return [...skills, skillBlock.backend]
       }
-      return skills;
+      return skills
     }, []),
     Data: skillBlocks.reduce((skills, skillBlock) => {
       if (skillBlock.data !== null) {
-        return [...skills, skillBlock.data];
+        return [...skills, skillBlock.data]
       }
-      return skills;
+      return skills
     }, []),
     UX: skillBlocks.reduce((skills, skillBlock) => {
       if (skillBlock.ux !== null) {
-        return [...skills, skillBlock.ux];
+        return [...skills, skillBlock.ux]
       }
-      return skills;
+      return skills
     }, []),
     Tools: skillBlocks.reduce((skills, skillBlock) => {
       if (skillBlock.tools !== null) {
-        return [...skills, skillBlock.tools];
+        return [...skills, skillBlock.tools]
       }
-      return skills;
+      return skills
     }, []),
     APIs: skillBlocks.reduce((skills, skillBlock) => {
       if (skillBlock.apis !== null) {
-        return [...skills, skillBlock.apis];
+        return [...skills, skillBlock.apis]
       }
-      return skills;
+      return skills
     }, []),
   }
 
   return {
-    work: joinedExperiences.filter(experience => experience.type === 'work'),
-    education: joinedExperiences.filter(experience => experience.type === 'education'),
-    project: joinedExperiences.filter(experience => experience.type === 'project'),
-    volunteer: joinedExperiences.filter(experience => experience.type === 'volunteer'),
+    work: joinedExperiences.filter(experience => experience.type === "work"),
+    education: joinedExperiences.filter(
+      experience => experience.type === "education"
+    ),
+    project: joinedExperiences.filter(
+      experience => experience.type === "project"
+    ),
+    volunteer: joinedExperiences.filter(
+      experience => experience.type === "volunteer"
+    ),
     allSkills,
-  };
+  }
 }

@@ -1,8 +1,11 @@
-const dotenv = require('dotenv')
+const dotenv = require("dotenv")
 const result = dotenv.config({
-  path: `${__dirname}/.env`
+  path: `${__dirname}/.env`,
 })
-const googleApiKey = process.env.PRIVATE_KEY.replace(new RegExp("\\\\n", "\g"), "\n")
+const googleApiKey = process.env.PRIVATE_KEY.replace(
+  new RegExp("\\\\n", "g"),
+  "\n"
+)
 
 const env_creds = {
   client_email: process.env.CLIENT_EMAIL,
@@ -36,48 +39,48 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: 'src/images/favicon.png',
+        icon: "src/images/favicon.png",
       },
     },
     {
-      resolve: 'gatsby-source-google-sheets',
+      resolve: "gatsby-source-google-sheets",
       options: {
-          spreadsheetId: '19DioFyzhNk41wCiZe6R6pYRyBU2W9wzx9as9CFwtSsE',
-          worksheetTitle: 'blocks',
-          credentials: env_creds
-      }
+        spreadsheetId: "19DioFyzhNk41wCiZe6R6pYRyBU2W9wzx9as9CFwtSsE",
+        worksheetTitle: "blocks",
+        credentials: env_creds,
+      },
     },
     {
-      resolve: 'gatsby-source-google-sheets',
+      resolve: "gatsby-source-google-sheets",
       options: {
-          spreadsheetId: '19DioFyzhNk41wCiZe6R6pYRyBU2W9wzx9as9CFwtSsE',
-          worksheetTitle: 'header',
-          credentials: env_creds
-      }
+        spreadsheetId: "19DioFyzhNk41wCiZe6R6pYRyBU2W9wzx9as9CFwtSsE",
+        worksheetTitle: "header",
+        credentials: env_creds,
+      },
     },
     {
-      resolve: 'gatsby-source-google-sheets',
+      resolve: "gatsby-source-google-sheets",
       options: {
-        spreadsheetId: '19DioFyzhNk41wCiZe6R6pYRyBU2W9wzx9as9CFwtSsE',
-        worksheetTitle: 'experience',
-        credentials: env_creds
-      }
+        spreadsheetId: "19DioFyzhNk41wCiZe6R6pYRyBU2W9wzx9as9CFwtSsE",
+        worksheetTitle: "experience",
+        credentials: env_creds,
+      },
     },
     {
-      resolve: 'gatsby-source-google-sheets',
+      resolve: "gatsby-source-google-sheets",
       options: {
-        spreadsheetId: '19DioFyzhNk41wCiZe6R6pYRyBU2W9wzx9as9CFwtSsE',
-        worksheetTitle: 'roles',
-        credentials: env_creds
-      }
+        spreadsheetId: "19DioFyzhNk41wCiZe6R6pYRyBU2W9wzx9as9CFwtSsE",
+        worksheetTitle: "roles",
+        credentials: env_creds,
+      },
     },
     {
-      resolve: 'gatsby-source-google-sheets',
+      resolve: "gatsby-source-google-sheets",
       options: {
-        spreadsheetId: '19DioFyzhNk41wCiZe6R6pYRyBU2W9wzx9as9CFwtSsE',
-        worksheetTitle: 'skillgroups',
-        credentials: env_creds
-      }
+        spreadsheetId: "19DioFyzhNk41wCiZe6R6pYRyBU2W9wzx9as9CFwtSsE",
+        worksheetTitle: "skillgroups",
+        credentials: env_creds,
+      },
     },
   ],
 }

@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from "gatsby"
 export const useResumeData = () => {
   const {
     allGoogleSheetBlocksRow,
-    allGoogleSheetHeaderRow
+    allGoogleSheetHeaderRow,
   } = useStaticQuery(graphql`
     query resumeDataQuery {
       allGoogleSheetBlocksRow(filter: {}) {
@@ -19,7 +19,7 @@ export const useResumeData = () => {
             details
             tags
             link
-            githublink  
+            githublink
           }
         }
       }
@@ -34,18 +34,24 @@ export const useResumeData = () => {
             github
             currentrole
             currentcompany
-            bio  
-            interests  
+            bio
+            interests
           }
         }
       }
     }
   `)
 
-  const workBlocks = allGoogleSheetBlocksRow.edges.filter(({node}) => node.type === 'work');
-  const eduBlocks = allGoogleSheetBlocksRow.edges.filter(({node}) => node.type === 'education');
-  const projectBlocks = allGoogleSheetBlocksRow.edges.filter(({node}) => node.type === 'project');
-  const headerBlocks = allGoogleSheetHeaderRow.edges;
+  const workBlocks = allGoogleSheetBlocksRow.edges.filter(
+    ({ node }) => node.type === "work"
+  )
+  const eduBlocks = allGoogleSheetBlocksRow.edges.filter(
+    ({ node }) => node.type === "education"
+  )
+  const projectBlocks = allGoogleSheetBlocksRow.edges.filter(
+    ({ node }) => node.type === "project"
+  )
+  const headerBlocks = allGoogleSheetHeaderRow.edges
 
   return {
     workBlocks,
@@ -53,4 +59,4 @@ export const useResumeData = () => {
     projectBlocks,
     headerBlocks,
   }
-};
+}
