@@ -36,7 +36,7 @@ const WorkRoleContainer = ({
           <Item.Header>{place}</Item.Header>
           <Item.Meta>
             {startdate} - {enddate ? enddate : "Present"} &#183;{" "}
-            {!(type === "education") && getTenureString(startdate, enddate)}{" "}
+            {!(type === "education") && getTenureString(startdate, enddate)}{"  "}
             &#183; {city}, {state}{" "}
           </Item.Meta>
           <Card.Group>
