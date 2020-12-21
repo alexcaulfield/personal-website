@@ -8,6 +8,7 @@
     "@emotion/core": "^10.0.28",
     "@react-pdf/renderer": "^1.6.8",
     "@react-pdf/styled-components": "^1.4.0",
+    "babel-eslint": "^10.1.0",
     "dotenv": "^8.2.0",
     "fix-date": "^1.1.6",
     "gatsby": "^2.18.1",
@@ -30,10 +31,14 @@
     "react-lazy-hero": "^2.0.0",
     "semantic-ui-less": "^2.4.1",
     "semantic-ui-react": "^0.82.1",
+    "standard": "^16.0.3",
     "styled-components": "^5.2.1"
   },
   "devDependencies": {
     "@babel/plugin-proposal-optional-chaining": "^7.6.0",
+    "eslint": "^7.16.0",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^3.3.0",
     "prettier": "^1.19.1"
   },
   "keywords": [
@@ -46,7 +51,8 @@
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
+    "lint": "eslint \"src/**/*.{js,jsx,json}\""
   },
   "repository": {
     "type": "git",
