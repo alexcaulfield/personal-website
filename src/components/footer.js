@@ -8,6 +8,7 @@ const Footer = () => (
         href="https://www.linkedin.com/in/alexandercaulfield/"
         target="_blank"
         rel="noopener noreferrer"
+        name="linkedin"
       >
         <Icon name="linkedin" size="big" />
       </a>
@@ -15,10 +16,11 @@ const Footer = () => (
         href="https://github.com/alexcaulfield"
         target="_blank"
         rel="noopener noreferrer"
+        name="github"
       >
         <Icon name="github" size="big" />
       </a>
-      <a href="mailto:alex@alexcaulfield.com">
+      <a href="mailto:alex@alexcaulfield.com" name="email">
         <Icon name="mail" size="big" />
       </a>
     </Segment>
@@ -28,7 +30,7 @@ const Footer = () => (
         <SemanticHeader.Content>
           {new Date().getFullYear()} Alex Caulfield
           <SemanticHeader.Subheader>
-            Made with <a href="https://www.gatsbyjs.org">Gatsby</a>
+            Made with <a href="https://www.gatsbyjs.org" name="Gatsby">Gatsby</a>
           </SemanticHeader.Subheader>
         </SemanticHeader.Content>
       </SemanticHeader>

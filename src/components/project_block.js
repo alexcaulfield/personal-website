@@ -10,12 +10,12 @@ const ProjectBlock = ({ name, details, tags, link, githublink }) => {
         <Card.Header>{name}</Card.Header>
         <Card.Meta>
           {link && (
-            <a href={link} target="_blank" rel="noopener noreferrer">
+            <a href={link} target="_blank" rel="noopener noreferrer" name={`${name} link`}>
               <Icon name="linkify" />
             </a>
           )}
           {githublink && (
-            <a href={githublink} target="_blank" rel="noopener noreferrer">
+            <a href={githublink} target="_blank" rel="noopener noreferrer" name={`${name} github link`}>
               <Icon name="github" />
             </a>
           )}
