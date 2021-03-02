@@ -31,7 +31,7 @@ const HeaderPdf = ({ name, address, email, phone, website, github }) => {
         <Subheader style={{ color: "black" }}>
           <Link src={website}>{website}</Link> |{" "}
           <Link src={github}>{github}</Link> |{" "}
-          <Link src={`mailto:${email}`}>{email}</Link> | {phone}
+          <Link src={`mailto:${email}`}>{email}</Link> {/* | {phone} */}
         </Subheader>
       </View>
     </Header>

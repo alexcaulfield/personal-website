@@ -61,7 +61,7 @@ const WorkPdfBlock = ({
   details,
   tags,
 }) => {
-  const detailsArray = details.split(/\n/g)
+  const detailsArray = details ? details.split(/\n/g) : [];
   return (
     <View style={styles.workBlock} fixed>
       <View style={styles.headline}>

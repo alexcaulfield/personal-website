@@ -11,7 +11,7 @@ const joinRolesToExperiences = (roles, experiences) => {
         if (skills) {
           splitSkills = skills.split(", ")
         }
-        const details = description.split(/\n/g)
+        const details = description ? description.split(/\n/g) : []
         return {
           role,
           startdate,
