@@ -6,7 +6,6 @@ import SkillSelector from "./skill_selector";
 import ProjectCard from "./project_card";
 
 const WorkPageLayout = () => {
-  if (typeof window !== undefined) console.log(window.__theme);
   const { work, education, project, volunteer, allSkills } = useNewResumeData();
   const [isAccordionOpen, setAccordionOpen] = useState(false);
 
