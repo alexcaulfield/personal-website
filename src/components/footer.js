@@ -1,8 +1,9 @@
 import React from "react";
-import { Header as SemanticHeader, Icon, Segment } from "semantic-ui-react";
+import { Icon, Segment } from "semantic-ui-react";
+import {DarkModeHeader} from './shared/shared_components';
 
 const Footer = () => (
-  <Segment.Group horizontal>
+  <Segment.Group horizontal style={{backgroundColor: 'var(--bg)'}}>
     <Segment textAlign="right">
       <a
         href="https://www.linkedin.com/in/alexandercaulfield/"
@@ -25,18 +26,18 @@ const Footer = () => (
       </a>
     </Segment>
     <Segment>
-      <SemanticHeader as="h5">
-        <Icon name="copyright outline" />
-        <SemanticHeader.Content>
+      <DarkModeHeader as="h5">
+        <DarkModeHeader.Content>
+          <Icon name="copyright outline" />
           {new Date().getFullYear()} Alex Caulfield
-          <SemanticHeader.Subheader>
+          <DarkModeHeader.Subheader>
             Made with{" "}
             <a href="https://www.gatsbyjs.org" name="Gatsby">
               Gatsby
             </a>
-          </SemanticHeader.Subheader>
-        </SemanticHeader.Content>
-      </SemanticHeader>
+          </DarkModeHeader.Subheader>
+        </DarkModeHeader.Content>
+      </DarkModeHeader>
     </Segment>
   </Segment.Group>
 );

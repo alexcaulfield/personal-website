@@ -7,6 +7,7 @@
 
 import React from "react";
 import PropTypes from "prop-types";
+import '../styles/global.css';
 import "./layout.css";
 import "semantic-ui-less/semantic.less";
 import Header from "./header";
@@ -20,6 +21,9 @@ const Layout = ({ activePanel, children }) => {
           display: "flex",
           minHeight: "100vh",
           flexDirection: "column",
+          backgroundColor: 'var(--bg)',
+          color: 'var(--textNormal)',
+          transition: 'color 0.2s ease-out, background 0.2s ease-out',
         }}
       >
         <Header activePanel={activePanel} />

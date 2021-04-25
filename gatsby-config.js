@@ -15,10 +15,11 @@ const env_creds = {
 module.exports = {
   siteMetadata: {
     title: `Alex Caulfield`,
-    description: `Alex Caulfield's Portfolio`,
+    description: `Alex Caulfield's Personal Website`,
     author: `Alex Caulfield <alex@alexcaulfield.com>`,
   },
   plugins: [
+    'gatsby-plugin-dark-mode',
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-less`,
     {

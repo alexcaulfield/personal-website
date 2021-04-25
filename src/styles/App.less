@@ -1,0 +1,22 @@
+@import "./Theme.less";
+
+//generic
+@dark-font: #333;
+@light-font: rgba(255, 255, 255, 0.9);
+
+// #282c35
+// dark
+@dark-bg: #373737;
+@dark-menu: #272727;
+@dark-card: #1b1c1d;
+body.dark {
+  .theme(@dark-bg, @light-font, @dark-menu, @dark-card);
+}
+
+// light
+@light-bg: #f4f4f4;
+@light-menu: rgba(110, 110, 110, 1);
+@light-card: #fff;
+body.light {
+  .theme(@light-bg, @dark-font, @light-menu, @light-card);
+}
