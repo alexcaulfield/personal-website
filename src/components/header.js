@@ -21,14 +21,14 @@ const Header = ({ activePanel }) => {
           <Menu.Item name={WORK} as={Link} to="/work" active={workActive} style={{color: 'var(--textNormal)'}}/>
         </Menu.Menu>
         <ThemeToggler>
-        {({ theme, toggleTheme }) => (
-          <Toggle 
-            toggle
-            checked={theme === 'dark'}
-            onChange={(e, {checked}) => toggleTheme(checked ? 'dark' : 'light')}
-          />
-        )}
-      </ThemeToggler>
+          {({ theme, toggleTheme }) => (
+            <Toggle 
+              toggle
+              checked={theme === 'dark'}
+              onChange={(e, {checked}) => toggleTheme(checked ? 'dark' : 'light')}
+            />
+          )}
+        </ThemeToggler>
       </Container>
     </Menu>
   );

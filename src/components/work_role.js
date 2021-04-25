@@ -17,7 +17,12 @@ const WorkRole = ({ role, startdate, enddate, skills, details }) => (
       ))}
       <Card.Content extra>
         {skills.map(skill => (
-          <Label basic style={{backgroundColor: 'var(--bg)', color: 'var(--textNormal)', borderColor: 'var(--textNormal)'}}>{skill}</Label>
+          <Label 
+            basic 
+            style={{backgroundColor: 'var(--bg)', color: 'var(--textNormal)', borderColor: 'var(--textNormal)',marginBottom: '8px'}}
+          >
+            {skill}
+          </Label>
         ))}
       </Card.Content>
     </Card.Content>

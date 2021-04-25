@@ -1,6 +1,5 @@
 import React from "react";
 import { Accordion, Button, Card, Icon } from "semantic-ui-react";
-import {DarkModeCard, DarkModeButton} from './shared/shared_components';
 
 const SkillSelector = ({
   allSkills,
@@ -9,33 +8,35 @@ const SkillSelector = ({
   isOpen,
   setIsOpen,
 }) => (
-  <Accordion fluid styled>
+  <Accordion fluid styled style={{backgroundColor: 'var(--bg)'}}>
     <Accordion.Title
       active={isOpen}
       index={0}
       onClick={() => setIsOpen(!isOpen)}
+      style={{color: 'var(--textNormal)'}}
     >
       <Icon name="dropdown" />
       Filter By Skill
     </Accordion.Title>
     <Accordion.Content active={isOpen}>
-      <DarkModeCard fluid>
+      <Card fluid style={{backgroundColor: 'var(--bg)'}}>
         {Object.keys(allSkills).map((skillType, index) => (
-          <Card.Content extra>
+          <Card.Content extra style={{color: 'var(--textNormal)'}}>
             {skillType} &nbsp;
             {allSkills[skillType].map(skill => (
-              <DarkModeButton
-                basic
+              <Button
+                primary
                 onClick={() => handleSkillSelect(skill)}
                 active={skillToSelect === skill}
                 disabled={skillToSelect !== skill && skillToSelect !== ""}
+                style={{marginBottom: '8px'}}
               >
                 {skill}
-              </DarkModeButton>
+              </Button>
             ))}
           </Card.Content>
         ))}
-      </DarkModeCard>
+      </Card>
     </Accordion.Content>
   </Accordion>
 );

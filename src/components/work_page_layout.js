@@ -4,9 +4,9 @@ import { Container, Header, Card } from "semantic-ui-react";
 import WorkRoleContainer from "./work_role_container";
 import SkillSelector from "./skill_selector";
 import ProjectCard from "./project_card";
-import {DarkModeHeader} from './shared/shared_components';
 
 const WorkPageLayout = () => {
+  if (typeof window !== undefined) console.log(window.__theme)
   const { work, education, project, volunteer, allSkills } = useNewResumeData();
   const [isAccordionOpen, setAccordionOpen] = useState(false);
 
@@ -53,7 +53,7 @@ const WorkPageLayout = () => {
         isOpen={isAccordionOpen}
         setIsOpen={setAccordionOpen}
       />
-      {projectToDisplay.length > 0 && <Header size="medium">Projects</Header>}
+      {projectToDisplay.length > 0 && <Header size="medium" style={{color: 'var(--textNormal)'}}>Projects</Header>}
       {projectToDisplay.length > 0 && (
         <Card.Group>
           {projectToDisplay.map(project => (
