@@ -1,8 +1,8 @@
-import React from "react"
-import { Item, Card } from "semantic-ui-react"
-import { getTenureString, getImgData } from "./resume_utils"
-import WorkRole from "./work_role"
-import { graphql, useStaticQuery } from "gatsby"
+import React from "react";
+import { Item, Card } from "semantic-ui-react";
+import { getTenureString, getImgData } from "./resume_utils";
+import WorkRole from "./work_role";
+import { graphql, useStaticQuery } from "gatsby";
 
 const WorkRoleContainer = ({
   place,
@@ -25,8 +25,8 @@ const WorkRoleContainer = ({
         }
       }
     }
-  `)
-  const { logo, alt } = getImgData(place, photoData)
+  `);
+  const { logo, alt } = getImgData(place, photoData);
 
   return (
     <Item.Group divided>
@@ -36,7 +36,8 @@ const WorkRoleContainer = ({
           <Item.Header>{place}</Item.Header>
           <Item.Meta>
             {startdate} - {enddate ? enddate : "Present"} &#183;{" "}
-            {!(type === "education") && getTenureString(startdate, enddate)}{"  "}
+            {!(type === "education") && getTenureString(startdate, enddate)}
+            {"  "}
             &#183; {city}, {state}{" "}
           </Item.Meta>
           <Card.Group>
@@ -47,7 +48,7 @@ const WorkRoleContainer = ({
         </Item.Content>
       </Item>
     </Item.Group>
-  )
-}
+  );
+};
 
-export default WorkRoleContainer
+export default WorkRoleContainer;

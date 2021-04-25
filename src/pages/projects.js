@@ -1,9 +1,9 @@
-import React from "react"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import ProjectsLayout from "../components/projects_layout"
+import React from "react";
+import Layout from "../components/layout";
+import SEO from "../components/seo";
+import ProjectsLayout from "../components/projects_layout";
 
-const PAGE_NAME = "Projects"
+const PAGE_NAME = "Projects";
 
 const Projects = () => {
   return (
@@ -11,7 +11,7 @@ const Projects = () => {
       <SEO title={PAGE_NAME} />
       <ProjectsLayout />
     </Layout>
-  )
-}
+  );
+};
 
-export default Projects
+export default Projects;

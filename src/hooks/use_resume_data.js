@@ -1,4 +1,4 @@
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby";
 
 export const useResumeData = () => {
   const {
@@ -40,23 +40,23 @@ export const useResumeData = () => {
         }
       }
     }
-  `)
+  `);
 
   const workBlocks = allGoogleSheetBlocksRow.edges.filter(
     ({ node }) => node.type === "work"
-  )
+  );
   const eduBlocks = allGoogleSheetBlocksRow.edges.filter(
     ({ node }) => node.type === "education"
-  )
+  );
   const projectBlocks = allGoogleSheetBlocksRow.edges.filter(
     ({ node }) => node.type === "project"
-  )
-  const headerBlocks = allGoogleSheetHeaderRow.edges
+  );
+  const headerBlocks = allGoogleSheetHeaderRow.edges;
 
   return {
     workBlocks,
     eduBlocks,
     projectBlocks,
     headerBlocks,
-  }
-}
+  };
+};

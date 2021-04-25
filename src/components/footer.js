@@ -1,5 +1,5 @@
-import React from "react"
-import { Header as SemanticHeader, Icon, Segment } from "semantic-ui-react"
+import React from "react";
+import { Header as SemanticHeader, Icon, Segment } from "semantic-ui-react";
 
 const Footer = () => (
   <Segment.Group horizontal>
@@ -30,12 +30,15 @@ const Footer = () => (
         <SemanticHeader.Content>
           {new Date().getFullYear()} Alex Caulfield
           <SemanticHeader.Subheader>
-            Made with <a href="https://www.gatsbyjs.org" name="Gatsby">Gatsby</a>
+            Made with{" "}
+            <a href="https://www.gatsbyjs.org" name="Gatsby">
+              Gatsby
+            </a>
           </SemanticHeader.Subheader>
         </SemanticHeader.Content>
       </SemanticHeader>
     </Segment>
   </Segment.Group>
-)
+);
 
-export default Footer
+export default Footer;

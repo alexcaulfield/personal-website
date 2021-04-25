@@ -1,6 +1,6 @@
-import React from "react"
-import { Text, View } from "@react-pdf/renderer"
-import { styles } from "./work_pdf_block"
+import React from "react";
+import { Text, View } from "@react-pdf/renderer";
+import { styles } from "./work_pdf_block";
 
 const EduPdfBlock = ({
   name,
@@ -13,9 +13,10 @@ const EduPdfBlock = ({
   details,
 }) => {
   const shouldShowLocation =
-    (position && name ? position.length + name.length < 40 : false) || !position
-  const shouldShowSkills = !!tags
-  const detailsArray = details.split(/\n/g)
+    (position && name ? position.length + name.length < 40 : false) ||
+    !position;
+  const shouldShowSkills = !!tags;
+  const detailsArray = details.split(/\n/g);
   return (
     <View style={styles.workBlock} fixed>
       <View style={styles.headline}>
@@ -34,7 +35,7 @@ const EduPdfBlock = ({
       </View>
       <View style={styles.detailsBlock}>
         {detailsArray.map(detail => {
-          return <Text style={styles.detail}>{detail}</Text>
+          return <Text style={styles.detail}>{detail}</Text>;
         })}
       </View>
       {shouldShowSkills && (
@@ -44,7 +45,7 @@ const EduPdfBlock = ({
         </View>
       )}
     </View>
-  )
-}
+  );
+};
 
-export default EduPdfBlock
+export default EduPdfBlock;

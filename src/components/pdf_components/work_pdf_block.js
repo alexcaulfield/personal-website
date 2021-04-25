@@ -1,5 +1,5 @@
-import React from "react"
-import { Text, View, StyleSheet } from "@react-pdf/renderer"
+import React from "react";
+import { Text, View, StyleSheet } from "@react-pdf/renderer";
 
 export const styles = StyleSheet.create({
   workBlock: {
@@ -49,7 +49,7 @@ export const styles = StyleSheet.create({
     flex: 1,
     fontFamily: "LatoRegular",
   },
-})
+});
 
 const WorkPdfBlock = ({
   name,
@@ -78,7 +78,7 @@ const WorkPdfBlock = ({
       </View>
       <View style={styles.detailsBlock}>
         {detailsArray.map(detail => {
-          return <Text style={styles.detail}>{detail}</Text>
+          return <Text style={styles.detail}>{detail}</Text>;
         })}
       </View>
       {tags && (
@@ -88,7 +88,7 @@ const WorkPdfBlock = ({
         </View>
       )}
     </View>
-  )
-}
+  );
+};
 
-export default WorkPdfBlock
+export default WorkPdfBlock;

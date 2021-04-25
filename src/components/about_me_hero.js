@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useState } from "react";
 import {
   Container,
   Responsive,
@@ -6,12 +6,12 @@ import {
   Button,
   Icon,
   Grid,
-} from "semantic-ui-react"
-import { useResumeData } from "../hooks/use_resume_data"
-import { PDFDownloadLink } from "@react-pdf/renderer"
-import PdfDocument from "./resume_pdf"
-import { graphql, useStaticQuery } from "gatsby"
-import Img from "gatsby-image"
+} from "semantic-ui-react";
+import { useResumeData } from "../hooks/use_resume_data";
+import { PDFDownloadLink } from "@react-pdf/renderer";
+import PdfDocument from "./resume_pdf";
+import { graphql, useStaticQuery } from "gatsby";
+import Img from "gatsby-image";
 
 const AboutMeHero = () => {
   const imgData = useStaticQuery(graphql`
@@ -24,17 +24,22 @@ const AboutMeHero = () => {
         }
       }
     }
-  `)
+  `);
 
-  const [isClient, setIsClient] = useState(false)
+  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
-    setIsClient(true)
-  }, [])
+    setIsClient(true);
+  }, []);
 
-  const { workBlocks, eduBlocks, projectBlocks, headerBlocks } = useResumeData()
-  const { node } = headerBlocks.length > 0 ? headerBlocks[0] : {}
-  const { name, currentrole, currentcompany, bio, interests } = node
+  const {
+    workBlocks,
+    eduBlocks,
+    projectBlocks,
+    headerBlocks,
+  } = useResumeData();
+  const { node } = headerBlocks.length > 0 ? headerBlocks[0] : {};
+  const { name, currentrole, currentcompany, bio, interests } = node;
   return (
     <Container>
       <Responsive>
@@ -106,7 +111,7 @@ const AboutMeHero = () => {
         </Grid>
       </Responsive>
     </Container>
-  )
-}
+  );
+};
 
-export default AboutMeHero
+export default AboutMeHero;

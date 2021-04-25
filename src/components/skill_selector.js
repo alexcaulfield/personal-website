@@ -1,5 +1,5 @@
-import React from "react"
-import { Accordion, Button, Card, Icon } from "semantic-ui-react"
+import React from "react";
+import { Accordion, Button, Card, Icon } from "semantic-ui-react";
 
 const SkillSelector = ({
   allSkills,
@@ -37,6 +37,6 @@ const SkillSelector = ({
       </Card>
     </Accordion.Content>
   </Accordion>
-)
+);
 
-export default SkillSelector
+export default SkillSelector;

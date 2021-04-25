@@ -1,11 +1,11 @@
-import React from "react"
-import WorkBlock from "./work_block"
-import EducationBlock from "./education_block"
-import { Header, Container } from "semantic-ui-react"
-import { useResumeData } from "../hooks/use_resume_data"
+import React from "react";
+import WorkBlock from "./work_block";
+import EducationBlock from "./education_block";
+import { Header, Container } from "semantic-ui-react";
+import { useResumeData } from "../hooks/use_resume_data";
 
 const WorkLayout = () => {
-  const { workBlocks, eduBlocks } = useResumeData()
+  const { workBlocks, eduBlocks } = useResumeData();
   return (
     <Container>
       <Header size="medium">Experience</Header>
@@ -20,7 +20,7 @@ const WorkLayout = () => {
           details,
           tags,
           link,
-        } = node
+        } = node;
         return (
           <WorkBlock
             name={name}
@@ -33,11 +33,11 @@ const WorkLayout = () => {
             tags={tags}
             link={link}
           />
-        )
+        );
       })}
       <Header size="medium">Education</Header>
       {eduBlocks.map(({ node }) => {
-        const { name, position, startdate, enddate, city, state, tags } = node
+        const { name, position, startdate, enddate, city, state, tags } = node;
         return (
           <EducationBlock
             name={name}
@@ -48,10 +48,10 @@ const WorkLayout = () => {
             state={state}
             tags={tags}
           />
-        )
+        );
       })}
     </Container>
-  )
-}
+  );
+};
 
-export default WorkLayout
+export default WorkLayout;
