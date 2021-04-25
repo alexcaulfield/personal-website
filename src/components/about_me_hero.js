@@ -1,17 +1,11 @@
 import React, { useEffect, useState } from "react";
-import {
-  Container,
-  Responsive,
-  Header as SemanticHeader,
-  Button,
-  Icon,
-  Grid,
-} from "semantic-ui-react";
+import { Container, Responsive, Button, Icon, Grid } from "semantic-ui-react";
 import { useResumeData } from "../hooks/use_resume_data";
 import { PDFDownloadLink } from "@react-pdf/renderer";
 import PdfDocument from "./resume_pdf";
 import { graphql, useStaticQuery } from "gatsby";
 import Img from "gatsby-image";
+import { DarkModeHeader } from "./shared/shared_components";
 
 const AboutMeHero = () => {
   const imgData = useStaticQuery(graphql`
@@ -67,18 +61,18 @@ const AboutMeHero = () => {
               largeScreen={8}
               computer={16}
             >
-              <SemanticHeader as="h1">
+              <DarkModeHeader as="h1">
                 Hey!{" "}
                 <span role="img" aria-label="wave">
                   👋
                 </span>{" "}
                 My name is {name}.
-              </SemanticHeader>
-              <SemanticHeader as="h3">
+              </DarkModeHeader>
+              <DarkModeHeader as="h3">
                 I'm currently a {currentrole} at {currentcompany}.
-              </SemanticHeader>
-              <SemanticHeader as="h4">{bio}</SemanticHeader>
-              <SemanticHeader as="h4">{interests}</SemanticHeader>
+              </DarkModeHeader>
+              <DarkModeHeader as="h4">{bio}</DarkModeHeader>
+              <DarkModeHeader as="h4">{interests}</DarkModeHeader>
               <div style={{ padding: 25, textAlign: "center" }}>
                 {isClient && (
                   <PDFDownloadLink

@@ -8,26 +8,28 @@ const SkillSelector = ({
   isOpen,
   setIsOpen,
 }) => (
-  <Accordion fluid styled>
+  <Accordion fluid styled style={{ backgroundColor: "var(--bg)" }}>
     <Accordion.Title
       active={isOpen}
       index={0}
       onClick={() => setIsOpen(!isOpen)}
+      style={{ color: "var(--textNormal)" }}
     >
       <Icon name="dropdown" />
       Filter By Skill
     </Accordion.Title>
     <Accordion.Content active={isOpen}>
-      <Card fluid>
+      <Card fluid style={{ backgroundColor: "var(--bg)" }}>
         {Object.keys(allSkills).map((skillType, index) => (
-          <Card.Content extra>
+          <Card.Content extra style={{ color: "var(--textNormal)" }}>
             {skillType} &nbsp;
             {allSkills[skillType].map(skill => (
               <Button
-                basic
+                primary
                 onClick={() => handleSkillSelect(skill)}
                 active={skillToSelect === skill}
                 disabled={skillToSelect !== skill && skillToSelect !== ""}
+                style={{ marginBottom: "8px" }}
               >
                 {skill}
               </Button>

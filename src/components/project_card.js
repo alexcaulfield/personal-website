@@ -11,23 +11,23 @@ const ProjectCard = ({
   link,
   githublink,
 }) => (
-  <Card>
+  <Card style={{ backgroundColor: "var(--bg)" }}>
     <Card.Content>
-      <Card.Header>{place}</Card.Header>
+      <Card.Header style={{ color: "var(--textNormal)" }}>{place}</Card.Header>
       <Card.Meta>
         {link && (
           <a href={link} target="_blank" rel="noopener noreferrer">
-            <Icon name="linkify" />
+            <Icon name="linkify" style={{ color: "var(--textNormal)" }} />
           </a>
         )}
         {githublink && (
           <a href={githublink} target="_blank" rel="noopener noreferrer">
-            <Icon name="github" />
+            <Icon name="github" style={{ color: "var(--textNormal)" }} />
           </a>
         )}
       </Card.Meta>
       {startdate && (
-        <Card.Meta>
+        <Card.Meta style={{ color: "var(--textNormal)" }}>
           {startdate} - {enddate ? enddate : "Present"} &#183;{" "}
           {getTenureString(startdate, enddate)}
         </Card.Meta>

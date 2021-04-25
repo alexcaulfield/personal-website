@@ -33,8 +33,10 @@ const WorkRoleContainer = ({
       <Item>
         <Item.Image size="tiny" src={logo} alt={alt} />
         <Item.Content>
-          <Item.Header>{place}</Item.Header>
-          <Item.Meta>
+          <Item.Header style={{ color: "var(--textNormal)" }}>
+            {place}
+          </Item.Header>
+          <Item.Meta style={{ color: "var(--textNormal)" }}>
             {startdate} - {enddate ? enddate : "Present"} &#183;{" "}
             {!(type === "education") && getTenureString(startdate, enddate)}
             {"  "}
