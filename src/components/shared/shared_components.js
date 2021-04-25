@@ -1,6 +1,16 @@
-import {Header} from "semantic-ui-react";
+import {Header, Card, Button} from "semantic-ui-react";
 import styled from 'styled-components';
 
-export const DarkModeHeader = styled(Header)`
+const DarkModeHeader = styled(Header)`
   color: var(--textNormal);
 `;
+
+const DarkModeCard = styled(Card)`
+  color: var(--textNormal);
+`;
+
+const DarkModeButton = styled(Button)`
+  color: var(--textNormal);
+`;
+
+export {DarkModeHeader, DarkModeCard, DarkModeButton}

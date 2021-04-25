@@ -4,6 +4,7 @@ import { Container, Header, Card } from "semantic-ui-react";
 import WorkRoleContainer from "./work_role_container";
 import SkillSelector from "./skill_selector";
 import ProjectCard from "./project_card";
+import {DarkModeHeader} from './shared/shared_components';
 
 const WorkPageLayout = () => {
   const { work, education, project, volunteer, allSkills } = useNewResumeData();
@@ -61,19 +62,19 @@ const WorkPageLayout = () => {
         </Card.Group>
       )}
       {experiencesToDisplay.length > 0 && (
-        <Header size="medium">Experience</Header>
+        <Header size="medium" style={{color: 'var(--textNormal)'}}>Experience</Header>
       )}
       {experiencesToDisplay.map(place => (
         <WorkRoleContainer {...place} />
       ))}
       {educationToDisplay.length > 0 && (
-        <Header size="medium">Education</Header>
+        <Header size="medium" style={{color: 'var(--textNormal)'}}>Education</Header>
       )}
       {educationToDisplay.map(place => (
         <WorkRoleContainer {...place} />
       ))}
       {volunteerToDisplay.length > 0 && (
-        <Header size="medium">Volunteer</Header>
+        <Header size="medium" style={{color: 'var(--textNormal)'}}>Volunteer</Header>
       )}
       {volunteerToDisplay.map(place => (
         <WorkRoleContainer {...place} />
