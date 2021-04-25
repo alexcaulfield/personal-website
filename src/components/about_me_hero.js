@@ -1,17 +1,11 @@
 import React, { useEffect, useState } from "react";
-import {
-  Container,
-  Responsive,
-  Button,
-  Icon,
-  Grid,
-} from "semantic-ui-react";
+import { Container, Responsive, Button, Icon, Grid } from "semantic-ui-react";
 import { useResumeData } from "../hooks/use_resume_data";
 import { PDFDownloadLink } from "@react-pdf/renderer";
 import PdfDocument from "./resume_pdf";
 import { graphql, useStaticQuery } from "gatsby";
 import Img from "gatsby-image";
-import {DarkModeHeader} from './shared/shared_components';
+import { DarkModeHeader } from "./shared/shared_components";
 
 const AboutMeHero = () => {
   const imgData = useStaticQuery(graphql`

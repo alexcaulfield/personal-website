@@ -6,7 +6,7 @@ import SkillSelector from "./skill_selector";
 import ProjectCard from "./project_card";
 
 const WorkPageLayout = () => {
-  if (typeof window !== undefined) console.log(window.__theme)
+  if (typeof window !== undefined) console.log(window.__theme);
   const { work, education, project, volunteer, allSkills } = useNewResumeData();
   const [isAccordionOpen, setAccordionOpen] = useState(false);
 
@@ -53,7 +53,11 @@ const WorkPageLayout = () => {
         isOpen={isAccordionOpen}
         setIsOpen={setAccordionOpen}
       />
-      {projectToDisplay.length > 0 && <Header size="medium" style={{color: 'var(--textNormal)'}}>Projects</Header>}
+      {projectToDisplay.length > 0 && (
+        <Header size="medium" style={{ color: "var(--textNormal)" }}>
+          Projects
+        </Header>
+      )}
       {projectToDisplay.length > 0 && (
         <Card.Group>
           {projectToDisplay.map(project => (
@@ -62,19 +66,25 @@ const WorkPageLayout = () => {
         </Card.Group>
       )}
       {experiencesToDisplay.length > 0 && (
-        <Header size="medium" style={{color: 'var(--textNormal)'}}>Experience</Header>
+        <Header size="medium" style={{ color: "var(--textNormal)" }}>
+          Experience
+        </Header>
       )}
       {experiencesToDisplay.map(place => (
         <WorkRoleContainer {...place} />
       ))}
       {educationToDisplay.length > 0 && (
-        <Header size="medium" style={{color: 'var(--textNormal)'}}>Education</Header>
+        <Header size="medium" style={{ color: "var(--textNormal)" }}>
+          Education
+        </Header>
       )}
       {educationToDisplay.map(place => (
         <WorkRoleContainer {...place} />
       ))}
       {volunteerToDisplay.length > 0 && (
-        <Header size="medium" style={{color: 'var(--textNormal)'}}>Volunteer</Header>
+        <Header size="medium" style={{ color: "var(--textNormal)" }}>
+          Volunteer
+        </Header>
       )}
       {volunteerToDisplay.map(place => (
         <WorkRoleContainer {...place} />

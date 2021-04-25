@@ -1,9 +1,9 @@
 import React from "react";
 import { Icon, Segment } from "semantic-ui-react";
-import {DarkModeHeader} from './shared/shared_components';
+import { DarkModeHeader } from "./shared/shared_components";
 
 const Footer = () => (
-  <Segment.Group horizontal style={{backgroundColor: 'var(--bg)'}}>
+  <Segment.Group horizontal style={{ backgroundColor: "var(--bg)" }}>
     <Segment textAlign="right">
       <a
         href="https://www.linkedin.com/in/alexandercaulfield/"

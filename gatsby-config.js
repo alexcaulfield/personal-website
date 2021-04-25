@@ -19,7 +19,7 @@ module.exports = {
     author: `Alex Caulfield <alex@alexcaulfield.com>`,
   },
   plugins: [
-    'gatsby-plugin-dark-mode',
+    "gatsby-plugin-dark-mode",
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-less`,
     {
