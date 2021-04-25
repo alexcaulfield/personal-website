@@ -1,12 +1,12 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
-import React from "react"
-import { Menu } from "semantic-ui-react"
+import { Link } from "gatsby";
+import PropTypes from "prop-types";
+import React from "react";
+import { Menu } from "semantic-ui-react";
 
-const WORK = "Work"
+const WORK = "Work";
 
 const Header = ({ activePanel }) => {
-  const workActive = activePanel === WORK
+  const workActive = activePanel === WORK;
   return (
     <Menu secondary pointing fixed="top" size="massive">
       <div className="ui container" style={{ backgroundColor: "white" }}>
@@ -16,15 +16,15 @@ const Header = ({ activePanel }) => {
         </Menu.Menu>
       </div>
     </Menu>
-  )
-}
+  );
+};
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
-}
+};
 
 Header.defaultProps = {
   siteTitle: ``,
-}
+};
 
-export default Header
+export default Header;

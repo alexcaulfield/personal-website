@@ -1,7 +1,7 @@
-import React from "react"
-import { Card, Icon } from "semantic-ui-react"
-import WorkRole from "./work_role"
-import { getTenureString } from "./resume_utils"
+import React from "react";
+import { Card, Icon } from "semantic-ui-react";
+import WorkRole from "./work_role";
+import { getTenureString } from "./resume_utils";
 
 const ProjectCard = ({
   place,
@@ -37,6 +37,6 @@ const ProjectCard = ({
       ))}
     </Card.Content>
   </Card>
-)
+);
 
-export default ProjectCard
+export default ProjectCard;

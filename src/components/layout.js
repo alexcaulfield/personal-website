@@ -5,12 +5,12 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from "react"
-import PropTypes from "prop-types"
-import "./layout.css"
-import "semantic-ui-less/semantic.less"
-import Header from "./header"
-import Footer from "./footer"
+import React from "react";
+import PropTypes from "prop-types";
+import "./layout.css";
+import "semantic-ui-less/semantic.less";
+import Header from "./header";
+import Footer from "./footer";
 
 const Layout = ({ activePanel, children }) => {
   return (
@@ -36,11 +36,11 @@ const Layout = ({ activePanel, children }) => {
         <Footer />
       </div>
     </>
-  )
-}
+  );
+};
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
-}
+};
 
-export default Layout
+export default Layout;

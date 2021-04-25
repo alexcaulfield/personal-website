@@ -1,6 +1,6 @@
-import React from "react"
-import { Item, Header, Button } from "semantic-ui-react"
-import { getTenureString, getImgData } from "../components/resume_utils"
+import React from "react";
+import { Item, Header, Button } from "semantic-ui-react";
+import { getTenureString, getImgData } from "../components/resume_utils";
 
 const WorkBlock = ({
   name,
@@ -13,10 +13,10 @@ const WorkBlock = ({
   tags,
   link,
 }) => {
-  const { logo, alt } = getImgData(name, {})
+  const { logo, alt } = getImgData(name, {});
 
-  const detailsArray = details.split(/\n/g)
-  const tagsArray = tags ? tags.split(", ") : []
+  const detailsArray = details.split(/\n/g);
+  const tagsArray = tags ? tags.split(", ") : [];
   return (
     <div>
       <Item.Group divided>
@@ -35,11 +35,11 @@ const WorkBlock = ({
               {city}, {state}
             </Item.Meta>
             {detailsArray.map(detail => {
-              return <Item.Description>{detail}</Item.Description>
+              return <Item.Description>{detail}</Item.Description>;
             })}
             <Item.Extra>
               {tagsArray.map(tag => {
-                return <Button basic>{tag}</Button>
+                return <Button basic>{tag}</Button>;
               })}
             </Item.Extra>
             {link && (
@@ -52,7 +52,7 @@ const WorkBlock = ({
       </Item.Group>
       <br />
     </div>
-  )
-}
+  );
+};
 
-export default WorkBlock
+export default WorkBlock;

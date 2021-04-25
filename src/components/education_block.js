@@ -1,7 +1,7 @@
-import React from "react"
-import { Item, Header, Button } from "semantic-ui-react"
-import { getImgData } from "../components/resume_utils"
-import { useStaticQuery, graphql } from "gatsby"
+import React from "react";
+import { Item, Header, Button } from "semantic-ui-react";
+import { getImgData } from "../components/resume_utils";
+import { useStaticQuery, graphql } from "gatsby";
 
 const EducationBlock = ({
   name,
@@ -24,11 +24,11 @@ const EducationBlock = ({
         }
       }
     }
-  `)
+  `);
 
-  const { logo, alt } = getImgData(name, photoData)
+  const { logo, alt } = getImgData(name, photoData);
 
-  const tagsArray = tags ? tags.split(", ") : []
+  const tagsArray = tags ? tags.split(", ") : [];
   return (
     <div>
       <Item.Group divided>
@@ -47,7 +47,7 @@ const EducationBlock = ({
             </Item.Meta>
             <Item.Extra>
               {tagsArray.map(tag => {
-                return <Button basic>{tag}</Button>
+                return <Button basic>{tag}</Button>;
               })}
             </Item.Extra>
           </Item.Content>
@@ -55,7 +55,7 @@ const EducationBlock = ({
       </Item.Group>
       <br />
     </div>
-  )
-}
+  );
+};
 
-export default EducationBlock
+export default EducationBlock;

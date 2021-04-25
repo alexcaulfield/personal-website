@@ -1,6 +1,6 @@
-import React from "react"
-import { Button, Card } from "semantic-ui-react"
-import { getTenureString } from "./resume_utils"
+import React from "react";
+import { Button, Card } from "semantic-ui-react";
+import { getTenureString } from "./resume_utils";
 
 const WorkRole = ({ role, startdate, enddate, skills, details }) => (
   <Card fluid>
@@ -22,6 +22,6 @@ const WorkRole = ({ role, startdate, enddate, skills, details }) => (
       </Card.Content>
     </Card.Content>
   </Card>
-)
+);
 
-export default WorkRole
+export default WorkRole;

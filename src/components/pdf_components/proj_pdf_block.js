@@ -1,9 +1,9 @@
-import React from "react"
-import { Text, View, Link } from "@react-pdf/renderer"
-import { styles } from "./work_pdf_block"
+import React from "react";
+import { Text, View, Link } from "@react-pdf/renderer";
+import { styles } from "./work_pdf_block";
 
 const ProjPdfBlock = ({ name, details, tags, link, githublink }) => {
-  const detailsArray = details.split(/\n/g)
+  const detailsArray = details.split(/\n/g);
   return (
     <View style={styles.workBlock} fixed>
       <View style={styles.headline}>
@@ -17,7 +17,7 @@ const ProjPdfBlock = ({ name, details, tags, link, githublink }) => {
       </View>
       <View style={styles.detailsBlock}>
         {detailsArray.map(detail => {
-          return <Text style={styles.detail}>{detail}</Text>
+          return <Text style={styles.detail}>{detail}</Text>;
         })}
       </View>
       {tags && (
@@ -27,7 +27,7 @@ const ProjPdfBlock = ({ name, details, tags, link, githublink }) => {
         </View>
       )}
     </View>
-  )
-}
+  );
+};
 
-export default ProjPdfBlock
+export default ProjPdfBlock;
