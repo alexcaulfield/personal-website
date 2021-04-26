@@ -11,15 +11,18 @@ const Toggle = styled(Checkbox)`
   margin: auto 0;
 `;
 
+const DarkModeMenu = styled(Menu)`
+  background-color: var(--bg);
+`;
+
 const Header = ({ activePanel }) => {
   const workActive = activePanel === WORK;
   return (
-    <Menu
+    <DarkModeMenu
       secondary
       pointing
       fixed="top"
       size="massive"
-      style={{ backgroundColor: "var(--bg)" }}
     >
       <Container>
         <Menu.Item
@@ -49,7 +52,7 @@ const Header = ({ activePanel }) => {
           )}
         </ThemeToggler>
       </Container>
-    </Menu>
+    </DarkModeMenu>
   );
 };
 

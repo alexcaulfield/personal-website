@@ -9,6 +9,7 @@
     "@react-pdf/renderer": "^1.6.8",
     "@react-pdf/styled-components": "^1.4.0",
     "babel-eslint": "^10.1.0",
+    "babel-plugin-styled-components": "^1.12.0",
     "dotenv": "^8.2.0",
     "fix-date": "^1.1.6",
     "gatsby": "^2.18.1",
@@ -19,6 +20,7 @@
     "gatsby-plugin-offline": "^3.0.19",
     "gatsby-plugin-react-helmet": "^3.1.14",
     "gatsby-plugin-sharp": "^2.2.37",
+    "gatsby-plugin-styled-components": "^4.3.0",
     "gatsby-source-filesystem": "^2.1.36",
     "gatsby-source-google-photos": "^1.0.4",
     "gatsby-source-google-sheets": "^1.1.1",
@@ -33,7 +35,7 @@
     "semantic-ui-less": "^2.4.1",
     "semantic-ui-react": "^0.82.1",
     "standard": "^16.0.3",
-    "styled-components": "^5.2.1"
+    "styled-components": "^5.2.3"
   },
   "devDependencies": {
     "@babel/plugin-proposal-optional-chaining": "^7.6.0",
