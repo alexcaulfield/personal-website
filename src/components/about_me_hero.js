@@ -6,6 +6,16 @@ import PdfDocument from "./resume_pdf";
 import { graphql, useStaticQuery } from "gatsby";
 import Img from "gatsby-image";
 import { DarkModeHeader } from "./shared/shared_components";
+import styled from "styled-components";
+
+const ImageWrapper = styled.div`
+  margin-bottom: 2vh;
+`;
+
+const ButtonWrapper = styled.div`
+  padding: 25px;
+  text-align: center;
+`;
 
 const AboutMeHero = () => {
   const imgData = useStaticQuery(graphql`
@@ -47,12 +57,12 @@ const AboutMeHero = () => {
               tablet={16}
               textAlign="center"
             >
-              <div style={{ marginBottom: "2vh" }}>
+              <ImageWrapper>
                 <Img
                   fluid={imgData.file.childImageSharp.fluid}
                   alt="An image from my travels"
                 />
-              </div>
+              </ImageWrapper>
             </Grid.Column>
             <Grid.Column
               mobile={16}
@@ -73,7 +83,7 @@ const AboutMeHero = () => {
               </DarkModeHeader>
               <DarkModeHeader as="h4">{bio}</DarkModeHeader>
               <DarkModeHeader as="h4">{interests}</DarkModeHeader>
-              <div style={{ padding: 25, textAlign: "center" }}>
+              <ButtonWrapper>
                 {isClient && (
                   <PDFDownloadLink
                     document={
@@ -99,7 +109,7 @@ const AboutMeHero = () => {
                     }
                   </PDFDownloadLink>
                 )}
-              </div>
+              </ButtonWrapper>
             </Grid.Column>
           </Grid.Row>
         </Grid>

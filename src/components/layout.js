@@ -21,6 +21,9 @@ const StyleWrapper = styled.div`
   background-color: var(--bg);
   color: var(--textNormal);
   transition: color 0.2s ease-out, background 0.2s ease-out;
+  .segments {
+    background-color: var(--bg) !important;
+  }
 `;
 
 const MainViewWrapper = styled.div`

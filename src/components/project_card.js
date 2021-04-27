@@ -2,6 +2,7 @@ import React from "react";
 import { Card, Icon } from "semantic-ui-react";
 import WorkRole from "./work_role";
 import { getTenureString } from "./resume_utils";
+import { DarkModeCard, DarkModeIcon } from './shared/shared_components'
 
 const ProjectCard = ({
   place,
@@ -11,23 +12,23 @@ const ProjectCard = ({
   link,
   githublink,
 }) => (
-  <Card style={{ backgroundColor: "var(--bg)" }}>
+  <DarkModeCard>
     <Card.Content>
-      <Card.Header style={{ color: "var(--textNormal)" }}>{place}</Card.Header>
+      <Card.Header>{place}</Card.Header>
       <Card.Meta>
         {link && (
           <a href={link} target="_blank" rel="noopener noreferrer">
-            <Icon name="linkify" style={{ color: "var(--textNormal)" }} />
+            <DarkModeIcon name="linkify" />
           </a>
         )}
         {githublink && (
           <a href={githublink} target="_blank" rel="noopener noreferrer">
-            <Icon name="github" style={{ color: "var(--textNormal)" }} />
+            <DarkModeIcon name="github" />
           </a>
         )}
       </Card.Meta>
       {startdate && (
-        <Card.Meta style={{ color: "var(--textNormal)" }}>
+        <Card.Meta>
           {startdate} - {enddate ? enddate : "Present"} &#183;{" "}
           {getTenureString(startdate, enddate)}
         </Card.Meta>
@@ -36,7 +37,7 @@ const ProjectCard = ({
         <WorkRole {...role} />
       ))}
     </Card.Content>
-  </Card>
+  </DarkModeCard>
 );
 
 export default ProjectCard;
