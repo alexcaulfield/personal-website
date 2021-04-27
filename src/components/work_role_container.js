@@ -3,6 +3,7 @@ import { Item, Card } from "semantic-ui-react";
 import { getTenureString, getImgData } from "./resume_utils";
 import WorkRole from "./work_role";
 import { graphql, useStaticQuery } from "gatsby";
+import { DarkModeItem } from './shared/shared_components';
 
 const WorkRoleContainer = ({
   place,
@@ -30,13 +31,13 @@ const WorkRoleContainer = ({
 
   return (
     <Item.Group divided>
-      <Item>
+      <DarkModeItem>
         <Item.Image size="tiny" src={logo} alt={alt} />
         <Item.Content>
-          <Item.Header style={{ color: "var(--textNormal)" }}>
+          <Item.Header>
             {place}
           </Item.Header>
-          <Item.Meta style={{ color: "var(--textNormal)" }}>
+          <Item.Meta>
             {startdate} - {enddate ? enddate : "Present"} &#183;{" "}
             {!(type === "education") && getTenureString(startdate, enddate)}
             {"  "}
@@ -48,7 +49,7 @@ const WorkRoleContainer = ({
             ))}
           </Card.Group>
         </Item.Content>
-      </Item>
+      </DarkModeItem>
     </Item.Group>
   );
 };

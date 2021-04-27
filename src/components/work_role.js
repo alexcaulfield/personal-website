@@ -1,41 +1,32 @@
 import React from "react";
-import { Label, Card } from "semantic-ui-react";
+import { Card } from "semantic-ui-react";
 import { getTenureString } from "./resume_utils";
+import {DarkModeCard, DarkModeLabel} from './shared/shared_components';
 
 const WorkRole = ({ role, startdate, enddate, skills, details }) => (
-  <Card fluid style={{ backgroundColor: "var(--bg)" }}>
+  <DarkModeCard fluid>
     <Card.Content>
       {role && (
-        <Card.Header style={{ color: "var(--textNormal)" }}>{role}</Card.Header>
+        <Card.Header>{role}</Card.Header>
       )}
       {startdate && (
-        <Card.Meta style={{ color: "var(--textNormal)" }}>
+        <Card.Meta>
           {startdate} - {enddate ? enddate : "Present"} &#183;{" "}
           {getTenureString(startdate, enddate)}
         </Card.Meta>
       )}
       {details.map(detail => (
-        <Card.Description style={{ color: "var(--textNormal)" }}>
+        <Card.Description>
           {detail}
         </Card.Description>
       ))}
       <Card.Content extra>
         {skills.map(skill => (
-          <Label
-            basic
-            style={{
-              backgroundColor: "var(--bg)",
-              color: "var(--textNormal)",
-              borderColor: "var(--textNormal)",
-              marginBottom: "8px",
-            }}
-          >
-            {skill}
-          </Label>
+          <DarkModeLabel basic>{skill}</DarkModeLabel>
         ))}
       </Card.Content>
     </Card.Content>
-  </Card>
+  </DarkModeCard>
 );
 
 export default WorkRole;

@@ -12,7 +12,7 @@ const Toggle = styled(Checkbox)`
 `;
 
 const DarkModeMenu = styled(Menu)`
-  background-color: var(--bg);
+  background-color: var(--bg) !important;
   .item {
     color: var(--textNormal) !important;
   }

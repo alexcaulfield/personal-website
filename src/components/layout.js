@@ -12,34 +12,31 @@ import "./layout.css";
 import "semantic-ui-less/semantic.less";
 import Header from "./header";
 import Footer from "./footer";
+import styled from "styled-components";
+
+const StyleWrapper = styled.div`
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  background-color: var(--bg);
+  color: var(--textNormal);
+  transition: color 0.2s ease-out, background 0.2s ease-out;
+`;
+
+const MainViewWrapper = styled.div`
+  flex-grow: 1;
+  padding-top: 8vh;
+  align-items: center;
+  justify-content: center;
+`;
 
 const Layout = ({ activePanel, children }) => {
   return (
-    <>
-      <div
-        style={{
-          display: "flex",
-          minHeight: "100vh",
-          flexDirection: "column",
-          backgroundColor: "var(--bg)",
-          color: "var(--textNormal)",
-          transition: "color 0.2s ease-out, background 0.2s ease-out",
-        }}
-      >
-        <Header activePanel={activePanel} />
-        <div
-          style={{
-            flexGrow: 1,
-            paddingTop: "8vh",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
-          {children}
-        </div>
-        <Footer />
-      </div>
-    </>
+    <StyleWrapper>
+      <Header activePanel={activePanel} />
+      <MainViewWrapper>{children}</MainViewWrapper>
+      <Footer />
+    </StyleWrapper>
   );
 };
 
