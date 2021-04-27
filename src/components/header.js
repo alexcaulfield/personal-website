@@ -12,6 +12,7 @@ const Toggle = styled(Checkbox)`
 `;
 
 const DarkModeMenu = styled(Menu)`
+  max-width: 98vw !important;
   background-color: var(--bg) !important;
   .item {
     color: var(--textNormal) !important;
