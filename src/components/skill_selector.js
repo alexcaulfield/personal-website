@@ -1,7 +1,7 @@
 import React from "react";
 import { Accordion, Button, Card, Icon } from "semantic-ui-react";
 import styled from "styled-components";
-import { DarkModeCard } from './shared/shared_components';
+import { DarkModeCard } from "./shared/shared_components";
 
 const DarkModeAccordion = styled(Accordion)`
   background-color: var(--bg) !important;

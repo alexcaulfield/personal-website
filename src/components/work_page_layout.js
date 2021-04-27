@@ -4,7 +4,7 @@ import { Container, Card } from "semantic-ui-react";
 import WorkRoleContainer from "./work_role_container";
 import SkillSelector from "./skill_selector";
 import ProjectCard from "./project_card";
-import { DarkModeHeader } from './shared/shared_components';
+import { DarkModeHeader } from "./shared/shared_components";
 
 const WorkPageLayout = () => {
   const { work, education, project, volunteer, allSkills } = useNewResumeData();
@@ -54,9 +54,7 @@ const WorkPageLayout = () => {
         setIsOpen={setAccordionOpen}
       />
       {projectToDisplay.length > 0 && (
-        <DarkModeHeader size="medium">
-          Projects
-        </DarkModeHeader>
+        <DarkModeHeader size="medium">Projects</DarkModeHeader>
       )}
       {projectToDisplay.length > 0 && (
         <Card.Group>
@@ -66,25 +64,19 @@ const WorkPageLayout = () => {
         </Card.Group>
       )}
       {experiencesToDisplay.length > 0 && (
-        <DarkModeHeader size="medium">
-          Experience
-        </DarkModeHeader>
+        <DarkModeHeader size="medium">Experience</DarkModeHeader>
       )}
       {experiencesToDisplay.map(place => (
         <WorkRoleContainer {...place} />
       ))}
       {educationToDisplay.length > 0 && (
-        <DarkModeHeader size="medium">
-          Education
-        </DarkModeHeader>
+        <DarkModeHeader size="medium">Education</DarkModeHeader>
       )}
       {educationToDisplay.map(place => (
         <WorkRoleContainer {...place} />
       ))}
       {volunteerToDisplay.length > 0 && (
-        <DarkModeHeader size="medium">
-          Volunteer
-        </DarkModeHeader>
+        <DarkModeHeader size="medium">Volunteer</DarkModeHeader>
       )}
       {volunteerToDisplay.map(place => (
         <WorkRoleContainer {...place} />

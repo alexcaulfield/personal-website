@@ -47,4 +47,11 @@ const DarkModeIcon = styled(Icon)`
   color: var(--textNormal);
 `;
 
-export { DarkModeHeader, DarkModeCard, DarkModeButton, DarkModeLabel, DarkModeItem, DarkModeIcon };
+export {
+  DarkModeHeader,
+  DarkModeCard,
+  DarkModeButton,
+  DarkModeLabel,
+  DarkModeItem,
+  DarkModeIcon,
+};

@@ -21,25 +21,11 @@ const DarkModeMenu = styled(Menu)`
 const Header = ({ activePanel }) => {
   const workActive = activePanel === WORK;
   return (
-    <DarkModeMenu
-      secondary
-      pointing
-      fixed="top"
-      size="massive"
-    >
+    <DarkModeMenu secondary pointing fixed="top" size="massive">
       <Container>
-        <Menu.Item
-          name="AC"
-          as={Link}
-          to="/"
-        />
+        <Menu.Item name="AC" as={Link} to="/" />
         <Menu.Menu position="right">
-          <Menu.Item
-            name={WORK}
-            as={Link}
-            to="/work"
-            active={workActive}
-          />
+          <Menu.Item name={WORK} as={Link} to="/work" active={workActive} />
         </Menu.Menu>
         <ThemeToggler>
           {({ theme, toggleTheme }) => (

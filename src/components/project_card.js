@@ -2,7 +2,7 @@ import React from "react";
 import { Card, Icon } from "semantic-ui-react";
 import WorkRole from "./work_role";
 import { getTenureString } from "./resume_utils";
-import { DarkModeCard, DarkModeIcon } from './shared/shared_components'
+import { DarkModeCard, DarkModeIcon } from "./shared/shared_components";
 
 const ProjectCard = ({
   place,
