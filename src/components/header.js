@@ -13,6 +13,9 @@ const Toggle = styled(Checkbox)`
 
 const DarkModeMenu = styled(Menu)`
   background-color: var(--bg);
+  .item {
+    color: var(--textNormal) !important;
+  }
 `;
 
 const Header = ({ activePanel }) => {
@@ -29,7 +32,6 @@ const Header = ({ activePanel }) => {
           name="AC"
           as={Link}
           to="/"
-          style={{ color: "var(--textNormal)" }}
         />
         <Menu.Menu position="right">
           <Menu.Item
@@ -37,7 +39,6 @@ const Header = ({ activePanel }) => {
             as={Link}
             to="/work"
             active={workActive}
-            style={{ color: "var(--textNormal)" }}
           />
         </Menu.Menu>
         <ThemeToggler>

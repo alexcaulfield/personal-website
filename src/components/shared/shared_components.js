@@ -6,7 +6,11 @@ const DarkModeHeader = styled(Header)`
 `;
 
 const DarkModeCard = styled(Card)`
-  color: var(--textNormal);
+  background-color: var(--bg) !important;
+  color: var(--textNormal) !important;
+  .content {
+    color: var(--textNormal) !important;
+  }
 `;
 
 const DarkModeButton = styled(Button)`
