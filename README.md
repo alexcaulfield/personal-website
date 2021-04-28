@@ -15,3 +15,8 @@
 - Site content is hosted in a Google Sheet and queried via GraphQL
 - Content dynamically renders a PDF resume in React
 - Can sort experiences by skills used during specific roles
+
+### Resources
+
+(How to Add Dark Mode to a Gatsby Site)[https://javascript.plainenglish.io/how-to-add-dark-mode-to-a-gatsby-site-2638fc841038]
+(Customizing the Semantic UI React library with Styled Components)[https://medium.com/serverlessguru/customizing-the-semantic-ui-react-library-with-styled-components-41cdab34be29]
