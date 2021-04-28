@@ -34,6 +34,7 @@ export const useResumeData = () => {
             github
             currentrole
             currentcompany
+            currentcompanylink
             bio
             interests
           }

@@ -7,7 +7,7 @@ export const styles = StyleSheet.create({
   },
   headline: {
     fontSize: 11,
-    color: "#b20000",
+    color: "#2185D0",
     flexDirection: "row",
     paddingBottom: 4,
   },

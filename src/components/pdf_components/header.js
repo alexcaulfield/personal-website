@@ -2,7 +2,7 @@ import React from "react";
 import { View, Link } from "@react-pdf/renderer";
 import styled from "@react-pdf/styled-components";
 
-const secondaryColor = "#b20000";
+const secondaryColor = "#2185D0";
 
 const Header = styled.View`
   text-align: center;

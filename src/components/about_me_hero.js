@@ -43,7 +43,7 @@ const AboutMeHero = () => {
     headerBlocks,
   } = useResumeData();
   const { node } = headerBlocks.length > 0 ? headerBlocks[0] : {};
-  const { name, currentrole, currentcompany, bio, interests } = node;
+  const { name, currentrole, currentcompany, currentcompanylink, bio, interests } = node;
   return (
     <Container>
       <Responsive>
@@ -79,7 +79,10 @@ const AboutMeHero = () => {
                 My name is {name}.
               </DarkModeHeader>
               <DarkModeHeader as="h3">
-                I'm currently a {currentrole} at {currentcompany}.
+                I'm currently a {currentrole} at{' '}
+                  <a href={currentcompanylink} target="_blank" rel="noopener noreferrer">
+                    {currentcompany}
+                  </a>.
               </DarkModeHeader>
               <DarkModeHeader as="h4">{bio}</DarkModeHeader>
               <DarkModeHeader as="h4">{interests}</DarkModeHeader>
