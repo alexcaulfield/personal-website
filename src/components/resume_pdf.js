@@ -4,6 +4,7 @@ import HeaderPdf from "../components/pdf_components/header";
 import WorkPdfBlock from "../components/pdf_components/work_pdf_block";
 import EduPdfBlock from "../components/pdf_components/edu_pdf_block";
 import ProjPdfBlock from "../components/pdf_components/proj_pdf_block";
+import SkillsPdfBlock from "../components/pdf_components/skills_pdf_block";
 import styled from "@react-pdf/styled-components";
 
 // https://fonts.googleapis.com/css?family=Lato
@@ -33,7 +34,7 @@ const PageWrapper = styled.Page`
 `;
 
 const SectionHeader = styled.Text`
-  font-size: 16px;
+  font-size: 12px;
   font-family: LatoBold;
   margin-top: 4px;
   margin-bottom: 0px;
@@ -44,7 +45,13 @@ const SectionSplitter = styled.Text`
   margin-bottom: 4px;
 `;
 
-const PdfDocument = ({ headerNodes, workNodes, eduNodes, projNodes }) => {
+const PdfDocument = ({
+  headerNodes,
+  workNodes,
+  eduNodes,
+  projNodes,
+  allSkills,
+}) => {
   return (
     <Document
       title="Alex Caulfield's Resume"
@@ -83,6 +90,11 @@ const PdfDocument = ({ headerNodes, workNodes, eduNodes, projNodes }) => {
               />
             );
           })}
+          <SectionHeader>Skills</SectionHeader>
+          <SectionSplitter>
+            ______________________________________________________________________________________________________________________
+          </SectionSplitter>
+          <SkillsPdfBlock allSkills={allSkills} />
           <SectionHeader>Projects</SectionHeader>
           <SectionSplitter>
             ______________________________________________________________________________________________________________________

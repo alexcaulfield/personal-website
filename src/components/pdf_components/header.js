@@ -20,7 +20,15 @@ const Subheader = styled.Text`
   margin-bottom: 4px;
 `;
 
-const HeaderPdf = ({ name, address, email, phone, website, github }) => {
+const HeaderPdf = ({
+  name,
+  address,
+  email,
+  phone,
+  website,
+  github,
+  linkedin,
+}) => {
   return (
     <Header fixed>
       <Name>{name}</Name>
@@ -30,8 +38,9 @@ const HeaderPdf = ({ name, address, email, phone, website, github }) => {
         </Subheader>
         <Subheader style={{ color: "black" }}>
           <Link src={website}>{website}</Link> |{" "}
+          <Link src={`mailto:${email}`}>{email}</Link> |{" "}
           <Link src={github}>{github}</Link> |{" "}
-          <Link src={`mailto:${email}`}>{email}</Link> {/* | {phone} */}
+          <Link src={linkedin}>{linkedin}</Link> {/* | {phone} */}
         </Subheader>
       </View>
     </Header>

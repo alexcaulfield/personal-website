@@ -41,6 +41,7 @@ const AboutMeHero = () => {
     eduBlocks,
     projectBlocks,
     headerBlocks,
+    allSkills,
   } = useResumeData();
   const { node } = headerBlocks.length > 0 ? headerBlocks[0] : {};
   const {
@@ -107,6 +108,7 @@ const AboutMeHero = () => {
                         workNodes={workBlocks}
                         eduNodes={eduBlocks}
                         projNodes={projectBlocks}
+                        allSkills={allSkills}
                       />
                     }
                     fileName="alexcaulfield-resume.pdf"
