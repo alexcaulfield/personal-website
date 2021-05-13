@@ -3,7 +3,7 @@ import { Text, View, StyleSheet } from "@react-pdf/renderer";
 
 export const styles = StyleSheet.create({
   workBlock: {
-    paddingBottom: 8,
+    paddingBottom: 4,
   },
   headline: {
     fontSize: 11,

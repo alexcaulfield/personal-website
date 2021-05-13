@@ -68,9 +68,6 @@ export const useNewResumeData = () => {
             frontend
             backend
             data
-            ux
-            tools
-            apis
           }
         }
       }
@@ -100,24 +97,6 @@ export const useNewResumeData = () => {
     Data: skillBlocks.reduce((skills, skillBlock) => {
       if (skillBlock.data !== null) {
         return [...skills, skillBlock.data];
-      }
-      return skills;
-    }, []),
-    UX: skillBlocks.reduce((skills, skillBlock) => {
-      if (skillBlock.ux !== null) {
-        return [...skills, skillBlock.ux];
-      }
-      return skills;
-    }, []),
-    Tools: skillBlocks.reduce((skills, skillBlock) => {
-      if (skillBlock.tools !== null) {
-        return [...skills, skillBlock.tools];
-      }
-      return skills;
-    }, []),
-    APIs: skillBlocks.reduce((skills, skillBlock) => {
-      if (skillBlock.apis !== null) {
-        return [...skills, skillBlock.apis];
       }
       return skills;
     }, []),

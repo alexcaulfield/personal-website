@@ -4,6 +4,7 @@ export const useResumeData = () => {
   const {
     allGoogleSheetBlocksRow,
     allGoogleSheetHeaderRow,
+    allGoogleSheetSkillgroupsRow,
   } = useStaticQuery(graphql`
     query resumeDataQuery {
       allGoogleSheetBlocksRow(filter: {}) {
@@ -35,8 +36,18 @@ export const useResumeData = () => {
             currentrole
             currentcompany
             currentcompanylink
+            linkedin
             bio
             interests
+          }
+        }
+      }
+      allGoogleSheetSkillgroupsRow(filter: {}) {
+        edges {
+          node {
+            frontend
+            backend
+            data
           }
         }
       }
@@ -53,11 +64,35 @@ export const useResumeData = () => {
     ({ node }) => node.type === "project"
   );
   const headerBlocks = allGoogleSheetHeaderRow.edges;
+  const skillBlocks = allGoogleSheetSkillgroupsRow.edges.map(
+    ({ node }) => node
+  );
+  const allSkills = {
+    Frontend: skillBlocks.reduce((skills, skillBlock) => {
+      if (skillBlock.frontend !== null) {
+        return [...skills, skillBlock.frontend];
+      }
+      return skills;
+    }, []),
+    Backend: skillBlocks.reduce((skills, skillBlock) => {
+      if (skillBlock.backend !== null) {
+        return [...skills, skillBlock.backend];
+      }
+      return skills;
+    }, []),
+    Data: skillBlocks.reduce((skills, skillBlock) => {
+      if (skillBlock.data !== null) {
+        return [...skills, skillBlock.data];
+      }
+      return skills;
+    }, []),
+  };
 
   return {
     workBlocks,
     eduBlocks,
     projectBlocks,
     headerBlocks,
+    allSkills,
   };
 };
