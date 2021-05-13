@@ -45,7 +45,13 @@ const SectionSplitter = styled.Text`
   margin-bottom: 4px;
 `;
 
-const PdfDocument = ({ headerNodes, workNodes, eduNodes, projNodes, allSkills, }) => {
+const PdfDocument = ({
+  headerNodes,
+  workNodes,
+  eduNodes,
+  projNodes,
+  allSkills,
+}) => {
   return (
     <Document
       title="Alex Caulfield's Resume"
@@ -88,9 +94,7 @@ const PdfDocument = ({ headerNodes, workNodes, eduNodes, projNodes, allSkills, }
           <SectionSplitter>
             ______________________________________________________________________________________________________________________
           </SectionSplitter>
-          <SkillsPdfBlock 
-            allSkills={allSkills}
-          />
+          <SkillsPdfBlock allSkills={allSkills} />
           <SectionHeader>Projects</SectionHeader>
           <SectionSplitter>
             ______________________________________________________________________________________________________________________

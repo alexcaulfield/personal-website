@@ -20,7 +20,15 @@ const Subheader = styled.Text`
   margin-bottom: 4px;
 `;
 
-const HeaderPdf = ({ name, address, email, phone, website, github, linkedin }) => {
+const HeaderPdf = ({
+  name,
+  address,
+  email,
+  phone,
+  website,
+  github,
+  linkedin,
+}) => {
   return (
     <Header fixed>
       <Name>{name}</Name>
