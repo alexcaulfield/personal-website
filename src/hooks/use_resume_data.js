@@ -18,7 +18,6 @@ export const useResumeData = () => {
             city
             state
             details
-            tags
             link
             githublink
           }

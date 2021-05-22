@@ -6,22 +6,25 @@ import EduPdfBlock from "../components/pdf_components/edu_pdf_block";
 import ProjPdfBlock from "../components/pdf_components/proj_pdf_block";
 import SkillsPdfBlock from "../components/pdf_components/skills_pdf_block";
 import styled from "@react-pdf/styled-components";
+import LatoRegular from "../../fonts/LatoRegular.ttf";
+import LatoBold from "../../fonts/LatoBold.ttf";
+import LatoItalic from "../../fonts/LatoItalic.ttf";
 
 // https://fonts.googleapis.com/css?family=Lato
 Font.register({
-  src: "https://fonts.gstatic.com/s/lato/v16/S6uyw4BMUTPHjx4wWyWtFCc.ttf",
+  src: LatoRegular,
   family: "LatoRegular",
   fontStyle: "normal",
   fontWeight: "normal",
 });
 Font.register({
-  src: "https://fonts.gstatic.com/s/lato/v16/S6u9w4BMUTPHh6UVSwiPHA3q5d0.ttf",
+  src: LatoBold,
   family: "LatoBold",
   fontStyle: "normal",
   fontWeight: "bold",
 });
 Font.register({
-  src: "https://fonts.gstatic.com/s/lato/v16/S6u8w4BMUTPHjxsAXC-vNiXg7Q.ttf",
+  src: LatoItalic,
   family: "LatoItalic",
   fontStyle: "normal",
   fontWeight: "normal",
