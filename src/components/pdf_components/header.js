@@ -37,10 +37,11 @@ const HeaderPdf = ({
           Software Engineer based in {address}
         </Subheader>
         <Subheader style={{ color: "black" }}>
-          <Link src={website}>{website.split('//')[1]}</Link> |{" "}
+          <Link src={website}>{website.split("//")[1]}</Link> |{" "}
           <Link src={`mailto:${email}`}>{email}</Link> |{" "}
-          <Link src={github}>{github.split('//')[1]}</Link> |{" "}
-          <Link src={linkedin}>{linkedin.split('//')[1]}</Link> {/* | {phone} */}
+          <Link src={github}>{github.split("//")[1]}</Link> |{" "}
+          <Link src={linkedin}>{linkedin.split("//")[1]}</Link>{" "}
+          {/* | {phone} */}
         </Subheader>
       </View>
     </Header>
