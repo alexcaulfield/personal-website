@@ -47,6 +47,7 @@ export const useResumeData = () => {
             frontend
             backend
             data
+            languages
           }
         }
       }
@@ -82,6 +83,12 @@ export const useResumeData = () => {
     Data: skillBlocks.reduce((skills, skillBlock) => {
       if (skillBlock.data !== null) {
         return [...skills, skillBlock.data];
+      }
+      return skills;
+    }, []),
+    Languages: skillBlocks.reduce((skills, skillBlock) => {
+      if (skillBlock.languages !== null) {
+        return [...skills, skillBlock.languages];
       }
       return skills;
     }, []),

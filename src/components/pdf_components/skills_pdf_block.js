@@ -2,6 +2,9 @@ import React from "react";
 import { Text, View, StyleSheet } from "@react-pdf/renderer";
 
 const styles = StyleSheet.create({
+  view: {
+    marginBottom: 2,
+  },
   skills: {
     flexDirection: "row",
     fontSize: 10,
@@ -20,7 +23,7 @@ const styles = StyleSheet.create({
 
 const SkillsPdfBlock = ({ allSkills }) => {
   return (
-    <View style={styles.workBlock} fixed>
+    <View style={styles.view} fixed>
       <View style={styles.skills}>
         {Object.keys(allSkills).map(skillType => (
           <>
