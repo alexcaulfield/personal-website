@@ -5,7 +5,7 @@ import { styles } from "./work_pdf_block";
 const ProjPdfBlock = ({ name, details, tags, link, githublink }) => {
   const detailsArray = details.split(/\n/g);
   return (
-    <View style={styles.workBlock} fixed>
+    <View fixed>
       <View style={styles.headline}>
         <Text style={styles.company}>
           <Link src={link}>{name}</Link>

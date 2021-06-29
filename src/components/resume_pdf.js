@@ -31,7 +31,7 @@ Font.register({
 });
 
 const PageWrapper = styled.Page`
-  padding: 24px;
+  padding: 24px 36px;
   font-size: 12px;
   font-family: LatoRegular;
 `;
@@ -39,7 +39,7 @@ const PageWrapper = styled.Page`
 const SectionHeader = styled.Text`
   font-size: 12px;
   font-family: LatoBold;
-  margin-top: 4px;
+  margin-top: 0px;
   margin-bottom: 0px;
 `;
 
@@ -67,7 +67,7 @@ const PdfDocument = ({
           {headerNodes[0] && <HeaderPdf {...headerNodes[0].node} />}
           <SectionHeader>Experience</SectionHeader>
           <SectionSplitter>
-            ______________________________________________________________________________________________________________________
+            ________________________________________________________________________________________________________________
           </SectionSplitter>
           {workNodes.map(({ node }) => {
             const {
@@ -95,12 +95,12 @@ const PdfDocument = ({
           })}
           <SectionHeader>Skills</SectionHeader>
           <SectionSplitter>
-            ______________________________________________________________________________________________________________________
+            ________________________________________________________________________________________________________________
           </SectionSplitter>
           <SkillsPdfBlock allSkills={allSkills} />
           <SectionHeader>Projects</SectionHeader>
           <SectionSplitter>
-            ______________________________________________________________________________________________________________________
+            ________________________________________________________________________________________________________________
           </SectionSplitter>
           {projNodes.map(({ node }) => {
             const { name, details, tags, link, githublink } = node;
@@ -116,7 +116,7 @@ const PdfDocument = ({
           })}
           <SectionHeader>Education</SectionHeader>
           <SectionSplitter>
-            ______________________________________________________________________________________________________________________
+            ________________________________________________________________________________________________________________
           </SectionSplitter>
           {eduNodes.map(({ node }) => {
             const {

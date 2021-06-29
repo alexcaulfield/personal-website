@@ -2,9 +2,6 @@ import React from "react";
 import { Text, View, StyleSheet } from "@react-pdf/renderer";
 
 export const styles = StyleSheet.create({
-  workBlock: {
-    paddingBottom: 4,
-  },
   headline: {
     fontSize: 11,
     color: "#2185D0",
@@ -63,7 +60,7 @@ const WorkPdfBlock = ({
 }) => {
   const detailsArray = details ? details.split(/\n/g) : [];
   return (
-    <View style={styles.workBlock} fixed>
+    <View fixed>
       <View style={styles.headline}>
         <Text style={styles.company}>{name}</Text>
         <Text style={styles.name}>
