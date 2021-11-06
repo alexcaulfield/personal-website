@@ -25,9 +25,6 @@ const Header = ({ activePanel }) => {
     <DarkModeMenu secondary pointing fixed="top" size="massive">
       <Container>
         <Menu.Item name="AC" as={Link} to="/" />
-        <Menu.Menu position="right">
-          <Menu.Item name={WORK} as={Link} to="/work" active={workActive} />
-        </Menu.Menu>
         <ThemeToggler>
           {({ theme, toggleTheme }) => (
             <Toggle

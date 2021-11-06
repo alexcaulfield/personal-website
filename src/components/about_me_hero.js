@@ -1,8 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Container, Responsive, Button, Icon, Grid } from "semantic-ui-react";
-import { useResumeData } from "../hooks/use_resume_data";
-import { PDFDownloadLink } from "@react-pdf/renderer";
-import PdfDocument from "./resume_pdf";
 import { graphql, useStaticQuery } from "gatsby";
 import Img from "gatsby-image";
 import { DarkModeHeader } from "./shared/shared_components";
@@ -35,23 +32,6 @@ const AboutMeHero = () => {
   useEffect(() => {
     setIsClient(true);
   }, []);
-
-  const {
-    workBlocks,
-    eduBlocks,
-    projectBlocks,
-    headerBlocks,
-    allSkills,
-  } = useResumeData();
-  const { node } = headerBlocks.length > 0 ? headerBlocks[0] : {};
-  const {
-    name,
-    currentrole,
-    currentcompany,
-    currentcompanylink,
-    bio,
-    interests,
-  } = node;
   return (
     <Container>
       <Responsive>
@@ -84,49 +64,25 @@ const AboutMeHero = () => {
                 <span role="img" aria-label="wave">
                   👋
                 </span>{" "}
-                My name is {name}.
+                My name is Alex Caulfield.
               </DarkModeHeader>
               <DarkModeHeader as="h3">
-                I'm currently a {currentrole} at{" "}
+                I'm currently a Software Engineer at{" "}
                 <a
-                  href={currentcompanylink}
+                  href="https://reddit.com"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  {currentcompany}
+                  Reddit
                 </a>
                 .
               </DarkModeHeader>
-              <DarkModeHeader as="h4">{bio}</DarkModeHeader>
-              <DarkModeHeader as="h4">{interests}</DarkModeHeader>
-              <ButtonWrapper>
-                {isClient && (
-                  <PDFDownloadLink
-                    document={
-                      <PdfDocument
-                        headerNodes={headerBlocks}
-                        workNodes={workBlocks}
-                        eduNodes={eduBlocks}
-                        projNodes={projectBlocks}
-                        allSkills={allSkills}
-                      />
-                    }
-                    fileName="alexcaulfield-resume.pdf"
-                  >
-                    {({ blob, url, loading, error }) =>
-                      loading ? (
-                        <Button secondary>
-                          <Icon loading name="spinner" />
-                        </Button>
-                      ) : (
-                        <Button primary>
-                          Download my resume <Icon name="download" />
-                        </Button>
-                      )
-                    }
-                  </PDFDownloadLink>
-                )}
-              </ButtonWrapper>
+              <DarkModeHeader as="h4">
+                I'm an experienced full stack software engineer with a passion for helping others build their engineering skills, creating intuitive user interfaces, and developing with frontend technologies like React, TypeScript, and GraphQL.
+              </DarkModeHeader>
+              <DarkModeHeader as="h4">
+              When I'm away from my computer, you can find me making a pizza, traveling, hiking, biking, throwing a frisbee, or playing guitar.
+              </DarkModeHeader>
             </Grid.Column>
           </Grid.Row>
         </Grid>

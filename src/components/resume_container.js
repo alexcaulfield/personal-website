@@ -2,14 +2,14 @@ import React from "react";
 import WorkBlock from "./work_block";
 import EducationBlock from "./education_block";
 import { Header, Container } from "semantic-ui-react";
-import { useResumeData } from "../hooks/use_resume_data";
+// import { useResumeData } from "../hooks/use_resume_data";
 
 const WorkLayout = () => {
-  const { workBlocks, eduBlocks } = useResumeData();
+  // const { workBlocks, eduBlocks } = useResumeData();
   return (
     <Container>
       <Header size="medium">Experience</Header>
-      {workBlocks.map(({ node }) => {
+      {/* {workBlocks.map(({ node }) => {
         const {
           name,
           position,
@@ -49,7 +49,7 @@ const WorkLayout = () => {
             tags={tags}
           />
         );
-      })}
+      })} */}
     </Container>
   );
 };

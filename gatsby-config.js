@@ -43,46 +43,6 @@ module.exports = {
         display: `minimal-ui`,
         icon: "src/images/favicon.png",
       },
-    },
-    {
-      resolve: "gatsby-source-google-sheets",
-      options: {
-        spreadsheetId: "19DioFyzhNk41wCiZe6R6pYRyBU2W9wzx9as9CFwtSsE",
-        worksheetTitle: "blocks",
-        credentials: env_creds,
-      },
-    },
-    {
-      resolve: "gatsby-source-google-sheets",
-      options: {
-        spreadsheetId: "19DioFyzhNk41wCiZe6R6pYRyBU2W9wzx9as9CFwtSsE",
-        worksheetTitle: "header",
-        credentials: env_creds,
-      },
-    },
-    {
-      resolve: "gatsby-source-google-sheets",
-      options: {
-        spreadsheetId: "19DioFyzhNk41wCiZe6R6pYRyBU2W9wzx9as9CFwtSsE",
-        worksheetTitle: "experience",
-        credentials: env_creds,
-      },
-    },
-    {
-      resolve: "gatsby-source-google-sheets",
-      options: {
-        spreadsheetId: "19DioFyzhNk41wCiZe6R6pYRyBU2W9wzx9as9CFwtSsE",
-        worksheetTitle: "roles",
-        credentials: env_creds,
-      },
-    },
-    {
-      resolve: "gatsby-source-google-sheets",
-      options: {
-        spreadsheetId: "19DioFyzhNk41wCiZe6R6pYRyBU2W9wzx9as9CFwtSsE",
-        worksheetTitle: "skillgroups",
-        credentials: env_creds,
-      },
-    },
+    }
   ],
 };
