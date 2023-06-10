@@ -12,7 +12,7 @@
     "babel-plugin-styled-components": "^1.12.0",
     "dotenv": "^8.2.0",
     "fix-date": "^1.1.6",
-    "gatsby": "^2.18.1",
+    "gatsby": "^4.25.7",
     "gatsby-image": "^2.2.31",
     "gatsby-plugin-dark-mode": "^1.1.2",
     "gatsby-plugin-less": "^3.0.14",
